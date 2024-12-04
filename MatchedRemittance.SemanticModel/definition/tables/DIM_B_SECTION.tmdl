@@ -1,0 +1,34 @@
+table DIM_B_SECTION
+	lineageTag: ca1bd0bb-7176-41b6-9119-6cf2c6753072
+
+	column B_SECTION_KEY
+		dataType: string
+		lineageTag: ffe71921-920e-463d-a0f7-2f55e500c6f8
+		summarizeBy: none
+		sourceColumn: B_SECTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION
+		dataType: string
+		lineageTag: 7b81e75e-4932-4be0-bb47-4651df740254
+		summarizeBy: none
+		sourceColumn: B_SECTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_B_SECTION = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_B_SECTION_View = REPORTING_Schema{[Name="DIM_B_SECTION",Kind="View"]}[Data]
+				in
+				    DIM_B_SECTION_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

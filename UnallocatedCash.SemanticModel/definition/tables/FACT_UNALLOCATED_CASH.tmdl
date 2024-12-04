@@ -1,0 +1,135 @@
+table FACT_UNALLOCATED_CASH
+	lineageTag: 95e6d723-35aa-40b0-a560-3421a0ce3fc5
+
+	measure AsAtInd =
+			CALCULATE(
+			    COUNTROWS(FACT_UNALLOCATED_CASH),
+			    FILTER(
+			        FACT_UNALLOCATED_CASH,
+			        DATEVALUE(FACT_UNALLOCATED_CASH[TRANSACTION_DATE]) <= MAX(DIM_DATE[DATE])))
+		formatString: 0
+		lineageTag: f9a4321c-b8c3-4dae-b77c-6b3a413c98cc
+
+	column TRANSACTION_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 56423056-cdc0-477e-955b-9d8d9ba245cf
+		summarizeBy: none
+		sourceColumn: TRANSACTION_DATE
+
+		variation Variation
+			isDefault
+			relationship: dd74148f-8cbf-475c-bbf0-0451ae959dbd
+			defaultHierarchy: LocalDateTable_b0f90099-6b94-4b6d-8968-e5b10b0f01d0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column CURRENCY_KEY
+		dataType: string
+		lineageTag: a3466421-a8da-44a6-9fdf-570948da1d68
+		summarizeBy: none
+		sourceColumn: CURRENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSACTION_DATE_KEY
+		dataType: double
+		lineageTag: e66e2c6e-3a7f-41bd-a97d-e992149dd425
+		summarizeBy: sum
+		sourceColumn: TRANSACTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRANSACTION_DESCRIPTION_KEY
+		dataType: string
+		lineageTag: 2b3ddf3f-9da7-435b-a7fe-6e500a2b73b8
+		summarizeBy: none
+		sourceColumn: TRANSACTION_DESCRIPTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BALANCE
+		dataType: double
+		lineageTag: 70073998-180f-4d2b-8b5d-cfddb18194c6
+		summarizeBy: sum
+		sourceColumn: BALANCE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALLOCATED
+		dataType: double
+		lineageTag: 3dec70b9-c430-4d87-b33e-5b4a196b5c27
+		summarizeBy: sum
+		sourceColumn: ALLOCATED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREATED_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 976a2872-7ad2-4835-81e7-c63c55818d83
+		summarizeBy: none
+		sourceColumn: CREATED_DATE
+
+		variation Variation
+			isDefault
+			relationship: 89ac39a4-f837-42f9-bf0a-c486036be044
+			defaultHierarchy: LocalDateTable_f550afca-ea7a-4eff-9315-35f33a4b4f46.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column CREATED_DATE_KEY
+		dataType: double
+		lineageTag: fdd500ac-38d2-4d5e-9c95-bf5b094fca65
+		summarizeBy: sum
+		sourceColumn: CREATED_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MATCHED_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 3e0b1da5-9a53-49b2-89d2-337a52f5ce18
+		summarizeBy: none
+		sourceColumn: MATCHED_DATE
+
+		variation Variation
+			isDefault
+			relationship: c800a4f5-17ec-40ca-a5a5-8de683c337a3
+			defaultHierarchy: LocalDateTable_fb7a7d45-9858-4e48-8ee2-d249c0d996eb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition FACT_UNALLOCATED_CASH = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    FACT_UNALLOCATED_CASH_View = REPORTING_Schema{[Name="FACT_UNALLOCATED_CASH",Kind="View"]}[Data]
+				in
+				    FACT_UNALLOCATED_CASH_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

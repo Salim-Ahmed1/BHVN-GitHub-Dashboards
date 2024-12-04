@@ -1,0 +1,1183 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "8821ff945d3e062b8b34",
+  "position": {
+    "x": 279.3478260869565,
+    "y": 23.913043478260867,
+    "z": 1000,
+    "height": 757.60869565217388,
+    "width": 1092.391304347826,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "CONTRACT_REFERENCE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.CONTRACT_REFERENCE",
+              "nativeQueryRef": "Contract Reference",
+              "displayName": "Contract Reference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "RISK_REFERENCE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.RISK_REFERENCE",
+              "nativeQueryRef": "Risk Reference",
+              "displayName": "Risk Reference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_B_SECTION"
+                    }
+                  },
+                  "Property": "B_SECTION"
+                }
+              },
+              "queryRef": "DIM_B_SECTION.B_SECTION",
+              "nativeQueryRef": "B Section",
+              "displayName": "B Section"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_PM_TYPE"
+                    }
+                  },
+                  "Property": "PM_TYPE"
+                }
+              },
+              "queryRef": "DIM_PM_TYPE.PM_TYPE",
+              "nativeQueryRef": "PM Type",
+              "displayName": "PM Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_SECTION_DESCRIPTION"
+                    }
+                  },
+                  "Property": "SECTION_DESCRIPTION"
+                }
+              },
+              "queryRef": "DIM_SECTION_DESCRIPTION.SECTION_DESCRIPTION",
+              "nativeQueryRef": "Section Description1",
+              "displayName": "Section Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "SETTLEMENT_DATETIME"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.SETTLEMENT_DATETIME",
+              "nativeQueryRef": "Settlement Date1",
+              "displayName": "Settlement Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "EFFECTIVE_DATE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.EFFECTIVE_DATE",
+              "nativeQueryRef": "Effective Date",
+              "displayName": "Effective Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "END_DATE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.END_DATE",
+              "nativeQueryRef": "End Date",
+              "displayName": "End Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "GWP"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.GWP)",
+              "nativeQueryRef": "GWP",
+              "displayName": "GWP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "MGA_COMMISSION_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.MGA_COMMISSION_AMOUNT)",
+              "nativeQueryRef": "MGA Commission",
+              "displayName": "MGA Commission"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "TOTAL_DEDUCTIONS_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.TOTAL_DEDUCTIONS_AMOUNT)",
+              "nativeQueryRef": "Total Deductions",
+              "displayName": "Total Deductions"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "NET_TO_BHVN_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.NET_TO_BHVN_AMOUNT)",
+              "nativeQueryRef": "Net to BHVN",
+              "displayName": "Net to BHVN"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "BHVN_FEE_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.BHVN_FEE_AMOUNT)",
+              "nativeQueryRef": "BHVN Fee",
+              "displayName": "BHVN Fee"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "PREMIUM_TAX_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.PREMIUM_TAX_AMOUNT)",
+              "nativeQueryRef": "Premium Tax",
+              "displayName": "Premium Tax"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "Earned BHVN Fee"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.Earned BHVN Fee",
+              "nativeQueryRef": "Earned BHVN Fee"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "Unearned BHVN Fee"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.Unearned BHVN Fee",
+              "nativeQueryRef": "Unearned BHVN Fee"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "Earned GWP"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.Earned GWP",
+              "nativeQueryRef": "Earned GWP"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "UPR"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.UPR",
+              "nativeQueryRef": "UPR"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#383B4E'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4F7F79'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "167.11929191582942D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FACT_CASH_EARNINGS.RISK_REFERENCE"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FACT_CASH_EARNINGS.CONTRACT_REFERENCE"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FACT_CASH_EARNINGS.RISK_REFERENCE"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FACT_CASH_EARNINGS.EFFECTIVE_DATE"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FACT_CASH_EARNINGS.END_DATE"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_CASH_EARNINGS.GWP)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_CASH_EARNINGS.MGA_COMMISSION_AMOUNT)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_CASH_EARNINGS.TOTAL_DEDUCTIONS_AMOUNT)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_CASH_EARNINGS.NET_TO_BHVN_AMOUNT)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_CASH_EARNINGS.BHVN_FEE_AMOUNT)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_CASH_EARNINGS.PREMIUM_TAX_AMOUNT)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Main Chart'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#383B4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.1
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#383B4E'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter4ea84ba0beceba4dccd0",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "CONTRACT_REFERENCE"
+          }
+        }
+      },
+      {
+        "name": "Filter6c0a5802d765c62e10d0",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "AsAtInd"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "FACT_CASH_EARNINGS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "AsAtInd"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "0L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter6ab59f44e56e2f73bd90",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "AsAtInd"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filteread88453c71e2baa089a",
+        "ordinal": 3,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "AsAtInd"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtercc214a7745dbb052040a",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_CONTRACT_DETAIL"
+              }
+            },
+            "Property": "SECTION_DESCRIPTION"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtercf5123eba687c4b14320",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "EFFECTIVE_DATE"
+          }
+        }
+      },
+      {
+        "name": "Filter2bf5a3a928017c1b680c",
+        "ordinal": 6,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "END_DATE"
+          }
+        }
+      },
+      {
+        "name": "Filter8ab5a17510056db5cd13",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "RISK_REFERENCE"
+          }
+        }
+      },
+      {
+        "name": "Filter51d651f634ebf62c1672",
+        "ordinal": 8,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FACT_CASH_EARNINGS"
+                  }
+                },
+                "Property": "GWP"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filtere06e5edc5c4e93384e50",
+        "ordinal": 9,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FACT_CASH_EARNINGS"
+                  }
+                },
+                "Property": "MGA_COMMISSION_AMOUNT"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter9d65f04562efca16ba6d",
+        "ordinal": 10,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FACT_CASH_EARNINGS"
+                  }
+                },
+                "Property": "TOTAL_DEDUCTIONS_AMOUNT"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filterd58d6754373a3aecf55e",
+        "ordinal": 11,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FACT_CASH_EARNINGS"
+                  }
+                },
+                "Property": "NET_TO_BHVN_AMOUNT"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filterfe3e2b1d7c6a58ad07ed",
+        "ordinal": 12,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FACT_CASH_EARNINGS"
+                  }
+                },
+                "Property": "BHVN_FEE_AMOUNT"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter7af3c41a91fd8515afe1",
+        "ordinal": 13,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FACT_CASH_EARNINGS"
+                  }
+                },
+                "Property": "PREMIUM_TAX_AMOUNT"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter4b59045a4f672264796b",
+        "ordinal": 14,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "Earned BHVN Fee"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter796bae57b9215633cdce",
+        "ordinal": 15,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "Earned GWP"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter3b95c1aab84886aa9a90",
+        "ordinal": 16,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "Unearned BHVN Fee"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter3be12c3be7b15abbc301",
+        "ordinal": 17,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "UPR"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filterf286d70040e4d9260c76",
+        "ordinal": 18,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_B_SECTION"
+              }
+            },
+            "Property": "B_SECTION"
+          }
+        }
+      },
+      {
+        "name": "Filter9d29275b8a8db5dd0840",
+        "ordinal": 19,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_PM_TYPE"
+              }
+            },
+            "Property": "PM_TYPE"
+          }
+        }
+      },
+      {
+        "name": "Filter14722b8a860578250392",
+        "ordinal": 20,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FACT_CASH_EARNINGS"
+              }
+            },
+            "Property": "SETTLEMENT_DATETIME"
+          }
+        }
+      },
+      {
+        "name": "Filter36a5031ecad0da91803c",
+        "ordinal": 21,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_SECTION_DESCRIPTION"
+              }
+            },
+            "Property": "SECTION_DESCRIPTION"
+          }
+        }
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

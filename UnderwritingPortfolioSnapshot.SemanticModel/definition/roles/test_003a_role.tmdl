@@ -1,0 +1,9 @@
+role test_003a_role
+	modelPermission: read
+
+	tablePermission RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT
+
+	tablePermission CONTRACT_REFERENCES = [CONTRACT_DESCRIPTION] == "UKSA003A – XSA – PI (24)"
+
+	annotation PBI_Id = 327666df388b4e6e94fb944867a5588e
+

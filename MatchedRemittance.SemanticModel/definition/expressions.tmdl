@@ -1,0 +1,21 @@
+expression 'Snowflake Server' = "a7129875625171-bhvndev.snowflakecomputing.com" meta [IsParameterQuery=true, List={"a7129875625171-bhvndev.snowflakecomputing.com", "a7129875625171-bhvn_tst.snowflakecomputing.com", "a7129875625171-bhvn_prod.snowflakecomputing.com"}, DefaultValue="a7129875625171-bhvndev.snowflakecomputing.com", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f18f2f9b-2347-4237-b05e-4d02bad8cce4
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression 'Snowflake DWH' = "DEV_BHVN_PBI_WH" meta [IsParameterQuery=true, List={"DEV_BHVN_PBI_WH", "TST_BHVN_PBI_WH", "PRD_BHVN_PBI_WH"}, DefaultValue="DEV_BHVN_PBI_WH", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 4df65c69-ce40-453b-89ae-7cbea0abdc2b
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression 'Snowflake Database' = "DEV_MODEL" meta [IsParameterQuery=true, List={"DEV_MODEL", "TST_MODEL", "PRD_MODEL"}, DefaultValue="DEV_MODEL", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 0b8c3561-f573-423c-971a-49b1a906e16d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

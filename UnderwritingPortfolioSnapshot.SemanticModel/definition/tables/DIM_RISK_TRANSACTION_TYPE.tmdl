@@ -1,0 +1,34 @@
+table DIM_RISK_TRANSACTION_TYPE
+	lineageTag: ebfd54f7-d50e-442f-9d22-2a17a5914ec1
+
+	column RISK_TRANSACTION_TYPE_ID
+		dataType: string
+		lineageTag: 9285c305-3758-43b6-ae29-3f79578c953e
+		summarizeBy: none
+		sourceColumn: RISK_TRANSACTION_TYPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_TRANSACTION_TYPE
+		dataType: string
+		lineageTag: 73cef2a3-8f5d-4608-b741-400753f3fd91
+		summarizeBy: none
+		sourceColumn: RISK_TRANSACTION_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_RISK_TRANSACTION_TYPE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_RISK_TRANSACTION_TYPE_View = REPORTING_Schema{[Name="DIM_RISK_TRANSACTION_TYPE",Kind="View"]}[Data]
+				in
+				    DIM_RISK_TRANSACTION_TYPE_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

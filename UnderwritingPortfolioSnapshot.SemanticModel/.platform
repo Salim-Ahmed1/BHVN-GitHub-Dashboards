@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "UnderwritingPortfolioSnapshot"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "04958b9a-a8bb-421a-83c7-6e55f9face4e"
+  }
+}

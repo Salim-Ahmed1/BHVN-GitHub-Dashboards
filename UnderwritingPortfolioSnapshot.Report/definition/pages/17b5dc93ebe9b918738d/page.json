@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.2.0/schema.json",
+  "name": "17b5dc93ebe9b918738d",
+  "displayName": "Unederwriting Portfolio Snapshot",
+  "displayOption": "FitToPage",
+  "height": 800,
+  "width": 1280,
+  "pageBinding": {
+    "name": "7a51b81548bb6f103365",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'pbibhvnbackground.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "pbibhvnbackground9349449414300561.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fill'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "a1836275a8b9b83ab25a",
+      "target": "416884cc15eaed27ff3c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "a1836275a8b9b83ab25a",
+      "target": "bf54d80455579ff0b6bd",
+      "type": "DataFilter"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+table CONTRACT_REFERENCES
+	lineageTag: bdc8d9d2-e393-4631-a5d3-055a828ba7c8
+
+	column CONTRACT_REFERENCE
+		dataType: string
+		lineageTag: 7a006dd0-2a63-495d-9b5b-3ce1196d89eb
+		summarizeBy: none
+		sourceColumn: CONTRACT_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_DESCRIPTION
+		dataType: string
+		lineageTag: d3a20965-e15e-44a8-b4d6-d29a779590cc
+		summarizeBy: none
+		sourceColumn: CONTRACT_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CONTRACT_REFERENCES = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("a7129875625171-bhvndev.snowflakecomputing.com","DEV_BHVN_PBI_WH"),
+				    DEV_MODEL_PREPARE_Database = Source{[Name="DEV_MODEL_PREPARE",Kind="Database"]}[Data],
+				    LOOK_UP_TABLES_Schema = DEV_MODEL_PREPARE_Database{[Name="LOOK_UP_TABLES",Kind="Schema"]}[Data],
+				    CONTRACT_REFERENCES_Table = LOOK_UP_TABLES_Schema{[Name="CONTRACT_REFERENCES",Kind="Table"]}[Data]
+				in
+				    CONTRACT_REFERENCES_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

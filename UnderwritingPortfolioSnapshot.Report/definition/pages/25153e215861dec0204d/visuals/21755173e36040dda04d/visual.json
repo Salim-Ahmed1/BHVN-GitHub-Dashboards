@@ -1,0 +1,1347 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "21755173e36040dda04d",
+  "position": {
+    "x": 19.485791610284171,
+    "y": 39.945872801082551,
+    "z": 0,
+    "height": 669.33694181326121,
+    "width": 1240.2706359945873,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                    }
+                  },
+                  "Property": "CONTRACT_REFERENCE"
+                }
+              },
+              "queryRef": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.CONTRACT_REFERENCE",
+              "nativeQueryRef": "Contract",
+              "displayName": "Contract"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_POLICY_DETAIL"
+                    }
+                  },
+                  "Property": "B_SECTION"
+                }
+              },
+              "queryRef": "DIM_CONTRACT_DETAIL.B_SECTION",
+              "nativeQueryRef": "Section",
+              "displayName": "Section"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                    }
+                  },
+                  "Property": "REPORT_PERIOD"
+                }
+              },
+              "queryRef": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.REPORT_PERIOD",
+              "nativeQueryRef": "Reporting Period",
+              "displayName": "Reporting Period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                    }
+                  },
+                  "Property": "RISK_REFERENCE"
+                }
+              },
+              "queryRef": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.RISK_REFERENCE",
+              "nativeQueryRef": "Risk Reference",
+              "displayName": "Risk Reference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                    }
+                  },
+                  "Property": "INCEPTION_DATE"
+                }
+              },
+              "queryRef": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.INCEPTION_DATE",
+              "nativeQueryRef": "Inception",
+              "displayName": "Inception"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                    }
+                  },
+                  "Property": "EXPIRY_DATE"
+                }
+              },
+              "queryRef": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.EXPIRY_DATE",
+              "nativeQueryRef": "Expiry",
+              "displayName": "Expiry"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                    }
+                  },
+                  "Property": "EFFECTIVE_DATE"
+                }
+              },
+              "queryRef": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.EFFECTIVE_DATE",
+              "nativeQueryRef": "Effective",
+              "displayName": "Effective"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_INSUR_NAME"
+                    }
+                  },
+                  "Property": "INSURER_NAME"
+                }
+              },
+              "queryRef": "DIM_INSUR_NAME.INSURER_NAME",
+              "nativeQueryRef": "Insured",
+              "displayName": "Insured"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_RISK_TRANSACTION_TYPE"
+                    }
+                  },
+                  "Property": "RISK_TRANSACTION_TYPE"
+                }
+              },
+              "queryRef": "DIM_RISK_TRANSACTION_TYPE.RISK_TRANSACTION_TYPE",
+              "nativeQueryRef": "Transaction Type",
+              "displayName": "Transaction Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_POLICY_DETAIL"
+                    }
+                  },
+                  "Property": "PM_TYPE"
+                }
+              },
+              "queryRef": "DIM_CONTRACT_DETAIL.PM_TYPE",
+              "nativeQueryRef": "Premium Type",
+              "displayName": "Premium Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_CURRENCY"
+                    }
+                  },
+                  "Property": "CURRENCY"
+                }
+              },
+              "queryRef": "DIM_CURRENCY.CURRENCY",
+              "nativeQueryRef": "Premium CCY",
+              "displayName": "Premium CCY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                        }
+                      },
+                      "Property": "GROSS_PM"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.GROSS_PM)",
+              "nativeQueryRef": "GWP",
+              "displayName": "GWP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                        }
+                      },
+                      "Property": "BHVN_COMMISSIONS"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.BHVN_COMMISSIONS)",
+              "nativeQueryRef": "Commissions",
+              "displayName": "Commissions"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                        }
+                      },
+                      "Property": "MGA_COMMISSION"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.MGA_COMMISSION)",
+              "nativeQueryRef": "MGA Commission",
+              "displayName": "MGA Commission"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                        }
+                      },
+                      "Property": "NET_PREMIUM"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.NET_PREMIUM)",
+              "nativeQueryRef": "NWP",
+              "displayName": "NWP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                        }
+                      },
+                      "Property": "CARRIER_GPM"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.CARRIER_GPM)",
+              "nativeQueryRef": "BHVN Receivable",
+              "displayName": "BHVN Receivable"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Si_Currency"
+                    }
+                  },
+                  "Property": "Currency"
+                }
+              },
+              "queryRef": "Si_Currency.Currency",
+              "nativeQueryRef": "SI CCY",
+              "displayName": "SI CCY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+                        }
+                      },
+                      "Property": "SI_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.SI_AMOUNT)",
+              "nativeQueryRef": "SI Amount",
+              "displayName": "SI Amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_CLASS_OF_BUSINESS"
+                    }
+                  },
+                  "Property": "DISTRIBIND_COB_1"
+                }
+              },
+              "queryRef": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_1",
+              "nativeQueryRef": "Reserving COB1",
+              "displayName": "Reserving COB1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_CLASS_OF_BUSINESS"
+                    }
+                  },
+                  "Property": "DISTRIBIND_COB_2"
+                }
+              },
+              "queryRef": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_2",
+              "nativeQueryRef": "Reserving COB2",
+              "displayName": "Reserving COB2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_CLASS_OF_BUSINESS"
+                    }
+                  },
+                  "Property": "DISTRIBIND_COB_3"
+                }
+              },
+              "queryRef": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_3",
+              "nativeQueryRef": "Reserving COB3",
+              "displayName": "Reserving COB3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_CLASS_OF_BUSINESS"
+                    }
+                  },
+                  "Property": "UNDERWRITING_PLAN_CLASS"
+                }
+              },
+              "queryRef": "DIM_CLASS_OF_BUSINESS.UNDERWRITING_PLAN_CLASS",
+              "nativeQueryRef": "UPC",
+              "displayName": "UPC"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DIM_CLASS_OF_BUSINESS"
+                  }
+                },
+                "Property": "UNDERWRITING_PLAN_CLASS"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#383B4E'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "161.37167963963932D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_RISK_TRANSACTION_TYPE.RISK_TRANSACTION_TYPE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.3700126864238D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.BHVN_COMMISSIONS)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "138.72962576428455D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.GROSS_PM)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.3887911589621D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.NET_PREMIUM)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "156.76860489364242D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.MGA_COMMISSION)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147.53720620988625D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.CARRIER_GPM)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.82002378635528D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Si_Currency.Currency"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123.07492689216883D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_2"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#383B4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CONTRACT_DETAIL.B_SECTION"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_3"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_2"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CLASS_OF_BUSINESS.DISTRIBIND_COB_1"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.SI_AMOUNT)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Si_Currency.Currency"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.NET_PREMIUM)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.MGA_COMMISSION)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.BHVN_COMMISSIONS)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.GROSS_PM)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CURRENCY.CURRENCY"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CONTRACT_DETAIL.PM_TYPE"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_RISK_TRANSACTION_TYPE.RISK_TRANSACTION_TYPE"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FACT_UNDERWRITING_PORTFOLIO_SNAPSHOT.CARRIER_GPM)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.GROSS_PM)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.BHVN_COMMISSIONS)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.MGA_COMMISSION)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.NET_PREMIUM)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.CARRIER_GPM)"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.SI_AMOUNT)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DIM_CLASS_OF_BUSINESS.UNDERWRITING_PLAN_CLASS"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.INCEPTION_DATE"
+          }
+        },
+        {
+          "properties": {
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT.EXPIRY_DATE"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3A3C4D'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "42D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

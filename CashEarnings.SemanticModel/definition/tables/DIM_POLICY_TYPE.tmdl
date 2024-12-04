@@ -1,0 +1,34 @@
+table DIM_POLICY_TYPE
+	lineageTag: 79bf1f93-a22c-4dce-9861-abb4af2e6480
+
+	column POLICY_TYPE_KEY
+		dataType: string
+		lineageTag: e8107012-f09f-4584-b87f-c1d709e1b9c1
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POLICY_TYPE
+		dataType: string
+		lineageTag: 057d1b4e-c2b1-450a-bda1-41fdccae96d4
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_POLICY_TYPE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_POLICY_TYPE_View = REPORTING_Schema{[Name="DIM_POLICY_TYPE",Kind="View"]}[Data]
+				in
+				    DIM_POLICY_TYPE_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

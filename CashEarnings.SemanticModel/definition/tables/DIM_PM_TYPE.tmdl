@@ -1,0 +1,34 @@
+table DIM_PM_TYPE
+	lineageTag: 73d2041d-44f7-4539-ab52-407ac0ea18aa
+
+	column PM_TYPE_KEY
+		dataType: string
+		lineageTag: eff672d5-3de4-46de-928d-a7ca7022e25b
+		summarizeBy: none
+		sourceColumn: PM_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_TYPE
+		dataType: string
+		lineageTag: e5eb84d6-13df-4954-8f0f-25816f4e6e73
+		summarizeBy: none
+		sourceColumn: PM_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PM_TYPE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_PM_TYPE_View = REPORTING_Schema{[Name="DIM_PM_TYPE",Kind="View"]}[Data]
+				in
+				    DIM_PM_TYPE_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

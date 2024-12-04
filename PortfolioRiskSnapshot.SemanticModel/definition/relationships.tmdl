@@ -1,0 +1,57 @@
+relationship cacf76a4-93e3-46ba-a4a1-830e8a9e22fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_DATE.DATE
+	toColumn: LocalDateTable_26cdb7a1-fb9f-4726-8efc-e2917787d6c7.Date
+
+relationship 50c770c1-64ab-458b-b4bf-6c4768032a8d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.INCEPTION_DATE
+	toColumn: LocalDateTable_713c827c-ef71-4f26-9972-67c084ee512d.Date
+
+relationship 55fbda17-cb17-40ee-8d74-f6d096858268
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.CONTRACT_INCEPTION_DATE
+	toColumn: LocalDateTable_bc927c8f-c197-4840-8d1d-d13480c5b5b6.Date
+
+relationship bd5063c5-ad19-46bb-ba5f-957182b66b1f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.EFFECTIVE_DATE
+	toColumn: LocalDateTable_0af8f6a2-679d-4b79-9478-b8410328e3bc.Date
+
+relationship dfeccd30-2c0c-422a-b93e-74fb1ae9df58
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.END_DATE
+	toColumn: LocalDateTable_54e53cdd-aac0-43e3-bb15-1fd89f900e21.Date
+
+relationship 0707e16c-de86-47c6-93fb-d16006af71c1
+	isActive: false
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.CONTRACT_INCEPTION_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 503e22e5-debe-75f9-97ba-89239604a750
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.EFFECTIVE_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 300c93ba-37d9-9a2a-5f43-5d5e0e86aabc
+	isActive: false
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.END_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 115df152-e714-6235-0c09-58ea86333aaf
+	isActive: false
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.INCEPTION_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship AutoDetected_1a47b9f4-77d5-4347-9ca6-f952bb3fd41d
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.BHVN_COB_DETAIL_KEY
+	toColumn: DIM_BHVN_COB.BHVN_COB_DETAIL_ID
+
+relationship ab286f9a-d6a3-7a83-78cd-b0b5899a4c33
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.PM_CURRENCY_KEY
+	toColumn: DIM_CURRENCY.CURRENCY_ID
+
+relationship AutoDetected_7887e170-bc4a-4761-b9d4-abe8376960f6
+	fromColumn: FACT_PORTFOLIO_RISK_SNAPSHOT.CONTRACT_REFERENCE
+	toColumn: CONTRACT_REFERENCES.CONTRACT_REFERENCE
+

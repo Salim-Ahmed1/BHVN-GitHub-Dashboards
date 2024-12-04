@@ -1,0 +1,103 @@
+relationship 54987d56-2427-4cf1-8e3b-dc14056d0f4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.CONTRACT_INCEPTION_DATE
+	toColumn: LocalDateTable_1b34afb7-c799-4a14-8140-945073a74bab.Date
+
+relationship 39efed85-2ceb-4b8d-b2aa-9a678cddf396
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.SETTLEMENT_DATE
+	toColumn: LocalDateTable_b0b14f06-856c-4cb8-8e60-dd73fbb73ffe.Date
+
+relationship 2131f6ca-2f1f-4dfd-af2b-42136b9fd5bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.INCEPTION_DATE
+	toColumn: LocalDateTable_3db68e59-0d1c-4622-a684-66b81c2347ea.Date
+
+relationship 2574544b-5b7e-46d7-ad95-371fecc708d3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.EFFECTIVE_DATE
+	toColumn: LocalDateTable_21467f32-c369-48c4-8b07-7e33e44e3fe2.Date
+
+relationship c30d46c8-5bff-4aca-b777-02b46f1efa5e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.EXPIRY_DATE
+	toColumn: LocalDateTable_a1264ba7-61c1-40cd-9904-b0b2fb5844f1.Date
+
+relationship 466a4b8b-69e8-4fcc-babe-dd70a5645689
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_DATE.DATE
+	toColumn: LocalDateTable_7cb87f4d-3a7d-4c64-9f9b-6023e70325d8.Date
+
+relationship 49fec360-de46-ff8a-2264-3d8c94d2f681
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.TAX_DETAIL_KEY
+	toColumn: DIM_BHVN_TAX_DETAIL.BHVN_TAX_JURISDICTION_ID
+
+relationship 96827b89-1840-d6fd-655e-edd3cfa49a42
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.PM_CURRENCY_KEY
+	toColumn: DIM_CURRENCY.CURRENCY_ID
+
+relationship bdab7121-5686-8e69-4b84-b9ba637b3260
+	fromColumn: FACT_MATCHED_REMITTANCE.SETTLEMENT_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 5e3095de-0d14-2d28-f5fd-ac4e31d94368
+	isActive: false
+	fromColumn: FACT_MATCHED_REMITTANCE.INCEPTION_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 93de3e2e-e1fa-1b58-8149-22cf895ea612
+	isActive: false
+	fromColumn: FACT_MATCHED_REMITTANCE.EXPIRY_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 340aee13-64c6-277c-b26a-fd3f1abe611e
+	isActive: false
+	fromColumn: FACT_MATCHED_REMITTANCE.EFFECTIVE_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 11d22690-199d-01bb-2ca5-7955f913a8c1
+	isActive: false
+	fromColumn: FACT_MATCHED_REMITTANCE.CONTRACT_INCEPTION_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship f5e978a4-9e62-4b08-8b74-44ff3c32c4f6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.VALID_FROM_DATETIME
+	toColumn: LocalDateTable_7d9ad04d-5c9f-4bd8-93dc-2d5f802060b7.Date
+
+relationship 251ca2ce-f96c-4985-862d-ce52068b3aa8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_MATCHED_REMITTANCE.VALID_TO_DATETIME
+	toColumn: LocalDateTable_9866ff9b-155c-46ad-a560-fb8ef659f8e5.Date
+
+relationship fdbcb510-b9c3-000e-8154-447146eed603
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.BHVN_COB_DETAIL_KEY
+	toColumn: DIM_BHVN_COB.BHVN_COB_DETAIL_ID
+
+relationship AutoDetected_67ba995a-df26-4d03-922b-7c65b5de1fc4
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.POLICY_TYPE_KEY
+	toColumn: DIM_POLICY_TYPE.POLICY_TYPE_KEY
+
+relationship AutoDetected_08014b3f-955f-4387-87f8-acfd91c16178
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.B_SECTION
+	toColumn: DIM_B_SECTION.B_SECTION
+
+relationship AutoDetected_46bb8aea-cd35-4a8b-9bdd-1bcb87381f08
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.SECTION_DESCRIPTION_KEY
+	toColumn: DIM_SECTION_DESCRIPTION.SECTION_DESCRIPTION_KEY
+
+relationship AutoDetected_919a38ef-48ce-492d-ad7a-8857db824c7a
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_MATCHED_REMITTANCE.PM_TYPE_KEY
+	toColumn: DIM_PM_TYPE.PM_TYPE_KEY
+
+relationship AutoDetected_8c9d1a48-8163-4ff6-87f9-7c684ac79e14
+	fromColumn: FACT_MATCHED_REMITTANCE.CONTRACT_REFERENCE
+	toColumn: CONTRACT_REFERENCES.CONTRACT_REFERENCE
+

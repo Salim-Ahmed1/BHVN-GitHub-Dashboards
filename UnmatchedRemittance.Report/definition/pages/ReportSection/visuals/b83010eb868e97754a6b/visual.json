@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "b83010eb868e97754a6b",
+  "position": {
+    "x": 299,
+    "y": 171,
+    "z": 2000,
+    "height": 242,
+    "width": 570,
+    "tabOrder": 10000
+  },
+  "visualGroup": {
+    "displayName": "Settlement date charts",
+    "groupMode": "ScaleMode"
+  }
+}

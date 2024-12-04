@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DIM_CURRENCY","DIM_DATE","FACT_UNALLOCATED_CASH","DIM_TRANSACTION_DESC","Snowflake Server","Snowflake DWH","Snowflake Database"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1004.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DIM_CURRENCY
+ref table DateTableTemplate_e9730db4-c0fc-49b5-9075-ba5c6dd09244
+ref table DIM_DATE
+ref table FACT_UNALLOCATED_CASH
+ref table LocalDateTable_b0f90099-6b94-4b6d-8968-e5b10b0f01d0
+ref table DIM_TRANSACTION_DESC
+ref table LocalDateTable_f550afca-ea7a-4eff-9315-35f33a4b4f46
+ref table LocalDateTable_fb7a7d45-9858-4e48-8ee2-d249c0d996eb
+ref table LocalDateTable_b584bef7-205c-478a-97bd-7d2ad489cf82
+
+ref cultureInfo en-US
+

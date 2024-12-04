@@ -1,0 +1,34 @@
+table DIM_INSUR_NAME
+	lineageTag: 29828980-08a6-40bd-ad79-c6c1eac3f43a
+
+	column INSURER_NAME_ID
+		dataType: string
+		lineageTag: 8c07ee24-b019-4147-b84b-3f2a2e56c1c7
+		summarizeBy: none
+		sourceColumn: INSURER_NAME_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSURER_NAME
+		dataType: string
+		lineageTag: 98a6afbe-c3a1-4e8e-9210-38b58a306147
+		summarizeBy: none
+		sourceColumn: INSURER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_INSUR_NAME = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_INSUR_NAME_View = REPORTING_Schema{[Name="DIM_INSUR_NAME",Kind="View"]}[Data]
+				in
+				    DIM_INSUR_NAME_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

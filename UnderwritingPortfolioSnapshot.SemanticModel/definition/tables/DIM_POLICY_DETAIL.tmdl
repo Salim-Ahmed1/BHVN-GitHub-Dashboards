@@ -1,0 +1,76 @@
+table DIM_POLICY_DETAIL
+	lineageTag: 0614c62c-ab09-41b8-86d4-d04c8e387647
+
+	column CONTRACT_REFERENCE
+		dataType: string
+		lineageTag: 4c2f8db7-6f81-4df9-af0f-eab5f3dc6236
+		summarizeBy: none
+		sourceColumn: CONTRACT_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_REFERENCE
+		dataType: string
+		lineageTag: 07c6c426-76d7-4959-b7fb-298d429462d6
+		summarizeBy: none
+		sourceColumn: RISK_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_TYPE
+		dataType: string
+		lineageTag: 20f649f5-0884-44e1-b72a-042d6cb6b307
+		summarizeBy: none
+		sourceColumn: PM_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION
+		dataType: string
+		lineageTag: ad260983-c32d-4c6f-9739-c69192d8ea6e
+		summarizeBy: none
+		sourceColumn: B_SECTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECTION_DESCRIPTION
+		dataType: string
+		lineageTag: 424ccec4-9a85-47ef-83db-8cdf1b85749b
+		summarizeBy: none
+		sourceColumn: SECTION_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column POLICY_TYPE
+		dataType: string
+		lineageTag: 842737de-42df-4f98-a8bb-dfa4aad38b53
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column POLICY_DETAIL_ID
+		dataType: double
+		lineageTag: f66c2cf5-859d-49dd-a7c8-51e8521c2143
+		summarizeBy: none
+		sourceColumn: POLICY_DETAIL_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DIM_POLICY_DETAIL = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_POLICY_DETAIL_View = REPORTING_Schema{[Name="DIM_POLICY_DETAIL",Kind="View"]}[Data]
+				in
+				    DIM_POLICY_DETAIL_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

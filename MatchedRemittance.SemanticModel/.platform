@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "MatchedRemittance"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "45830d68-0708-4f9f-aa0c-1c1bc00a72c8"
+  }
+}

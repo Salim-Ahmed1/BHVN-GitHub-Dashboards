@@ -1,0 +1,34 @@
+table DIM_CURRENCY
+	lineageTag: 66e59646-1ce5-4d08-bacd-cdcf769cf99c
+
+	column CURRENCY
+		dataType: string
+		lineageTag: 4dd2843a-ec3d-492d-91a5-8de2fd2d8e44
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY_ID
+		dataType: string
+		lineageTag: 243f2abf-2efa-4c4c-9e95-0eb1501ae25a
+		summarizeBy: none
+		sourceColumn: CURRENCY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_CURRENCY = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_CURRENCY_View = REPORTING_Schema{[Name="DIM_CURRENCY",Kind="View"]}[Data]
+				in
+				    DIM_CURRENCY_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

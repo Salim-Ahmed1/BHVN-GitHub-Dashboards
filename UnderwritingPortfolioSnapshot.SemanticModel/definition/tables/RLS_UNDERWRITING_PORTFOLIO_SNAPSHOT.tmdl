@@ -1,0 +1,711 @@
+table RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT
+	lineageTag: 53c551d5-e9a9-44f9-8e91-dad8c2a7fad1
+
+	measure Commissions_Current_Period =
+			
+			VAR SelectedMeasure = SELECTEDVALUE('Table_Commissions'[Metric])
+			VAR ReportingDate = MAX(DIM_DATE[DATE])
+			VAR PeriodStart = DATE(YEAR(ReportingDate), MONTH(ReportingDate), 1)
+			VAR PeriodEnd = EOMONTH(ReportingDate, 0)
+			RETURN
+			SWITCH(
+			    SelectedMeasure,
+			    "Commissions", CALCULATE(SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    "Min", CALCULATE(MIN(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    "Max", CALCULATE(MAX(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    "Average", CALCULATE(AVERAGE(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    BLANK()
+			)
+		formatString: #,0
+		displayFolder: _Measures
+		lineageTag: b18e3dd1-6632-48aa-9953-5b2e38ad4149
+
+	measure Commissions_Premium_Analysis =
+			
+			VAR LatestReportingDate = MAX(DIM_DATE[DATE])
+			VAR EarliestReportingDate = MIN(DIM_DATE[DATE])
+			RETURN
+			CALCULATE(
+			    SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]),
+			    FILTER(
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= EarliestReportingDate
+			        && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= LatestReportingDate
+			        && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= LatestReportingDate
+			    )
+			)
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: _Measures
+		lineageTag: dfcdcf3c-497b-4547-93b8-18f7ad4f576c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure GWP_Current_Period =
+			
+			VAR SelectedMeasure = SELECTEDVALUE('Table_GWP'[Metric])
+			VAR ReportingDate = MAX(DIM_DATE[DATE])
+			VAR PeriodStart = DATE(YEAR(ReportingDate), MONTH(ReportingDate), 1)
+			VAR PeriodEnd = EOMONTH(ReportingDate, 0)
+			RETURN
+			SWITCH(
+			    SelectedMeasure,
+			    "GWP", CALCULATE(SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    "Min", CALCULATE(MIN(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    "Max", CALCULATE(MAX(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    "Average", CALCULATE(AVERAGE(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PeriodStart && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PeriodEnd &&
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PeriodEnd),
+			    BLANK()
+			)
+		formatString: #,0
+		displayFolder: _Measures
+		lineageTag: b00d578a-d5ea-4894-a4c7-25d931a11fae
+
+	measure GWP_Premium_Analysis =
+			
+			VAR LatestReportingDate = MAX(DIM_DATE[DATE])
+			VAR EarliestReportingDate = MIN(DIM_DATE[DATE])
+			RETURN
+			CALCULATE(
+			    SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]),
+			    FILTER(
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= EarliestReportingDate
+			        && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= LatestReportingDate
+			        && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= LatestReportingDate
+			    )
+			)
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: _Measures
+		lineageTag: 3314ebb4-0f28-405f-9719-2ae3648c0435
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Prior_Month_Commissions = ```
+			
+			VAR ReportingDate = MAX('DIM_DATE'[DATE])  
+			VAR PriorMonthEnd = EOMONTH(ReportingDate, -1)
+			VAR PriorMonthStart = DATE(YEAR(PriorMonthEnd), MONTH(PriorMonthEnd), 1)  
+			RETURN
+			CALCULATE(
+			    SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), 
+			    ALL(DIM_DATE), 
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart,  
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PriorMonthEnd,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PriorMonthEnd
+			)
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: 5e031ff4-3e86-4688-aa69-82d1381661dd
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Prior_Month_GWP = ```
+			
+			VAR ReportingDate = MAX('DIM_DATE'[DATE])  
+			VAR PriorMonthEnd = EOMONTH(ReportingDate, -1)
+			VAR PriorMonthStart = DATE(YEAR(PriorMonthEnd), MONTH(PriorMonthEnd), 1)  
+			RETURN
+			CALCULATE(
+			    SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), 
+			    ALL(DIM_DATE), 
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart,  
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PriorMonthEnd,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PriorMonthEnd
+			)
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: c64642ac-1aaf-4c0f-ab0f-d9be68d446f0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Prior_Month_NWP = ```
+			
+			VAR ReportingDate = MAX('DIM_DATE'[DATE]) 
+			VAR PriorMonthEnd = EOMONTH(ReportingDate, -1)  
+			VAR PriorMonthStart = DATE(YEAR(PriorMonthEnd), MONTH(PriorMonthEnd), 1)  
+			RETURN
+			CALCULATE(
+			    SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[NET_PREMIUM]),  
+			    ALL(DIM_DATE),  
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart,  
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PriorMonthEnd,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PriorMonthEnd
+			)
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: 43d295fa-c383-4d30-a52d-50786f388b55
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Prior_Month_Policies = ```
+			
+			VAR ReportingDate = MAX('DIM_DATE'[DATE])  
+			VAR PriorMonthEnd = EOMONTH(ReportingDate, -1)
+			VAR PriorMonthStart = DATE(YEAR(PriorMonthEnd), MONTH(PriorMonthEnd), 1)  
+			RETURN
+			CALCULATE(
+			    DISTINCTCOUNT(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[RISK_DETAIL_ID]), 
+			    ALL(DIM_DATE), 
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart,  
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= PriorMonthEnd,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= PriorMonthEnd
+			)
+			```
+		formatString: #,0
+		displayFolder: _Measures
+		lineageTag: fca25f7e-5cfb-43eb-b710-6c70703debd3
+
+	measure Total_Commissions = ```
+			
+			VAR ReportingPeriod = MAX(DIM_DATE[DATE])
+			VAR PriorMonthStart = DATE(YEAR(MAX(DIM_DATE[DATE])), MONTH(MAX(DIM_DATE[DATE])), 1)  
+			VAR CalculatedCommission = 
+			    CALCULATE(
+			        SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]),
+			        FILTER(
+			            RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT,
+			            RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingPeriod
+			            && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart
+			            && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingPeriod
+			        )
+			    )
+			RETURN
+			    IF(ISBLANK(CalculatedCommission), 0, CalculatedCommission)
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: 04c68cd7-b8ae-4d8e-b0a7-32ed18f8d0fc
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Total_GWP = ```
+			
+			VAR ReportingPeriod = MAX(DIM_DATE[DATE])
+			VAR PriorMonthStart = DATE(YEAR(MAX(DIM_DATE[DATE])), MONTH(MAX(DIM_DATE[DATE])), 1)  
+			VAR CalculatedGWP = 
+			    CALCULATE(
+			        SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]),
+			        FILTER(
+			            RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT,
+			            RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingPeriod
+			            && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart
+			            && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingPeriod
+			        )
+			    )
+			RETURN
+			    IF(ISBLANK(CalculatedGWP), 0, CalculatedGWP)
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: 04bd6417-60a1-4b23-b70c-03e44bc851aa
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Total_NWP = ```
+			
+			VAR ReportingPeriod = MAX(DIM_DATE[DATE])
+			VAR PriorMonthStart = DATE(YEAR(MAX(DIM_DATE[DATE])), MONTH(MAX(DIM_DATE[DATE])), 1)  
+			VAR CalculatedNWP = 
+			    CALCULATE(
+			        SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[NET_PREMIUM]),
+			        FILTER(
+			            RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT,
+			            RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingPeriod
+			            && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart
+			            && RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingPeriod
+			        )
+			    )
+			RETURN
+			    IF(ISBLANK(CalculatedNWP), 0, CalculatedNWP)
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: 5b6cb3f6-cb3a-4128-bb3f-4acc48064325
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure Total_Policies = ```
+			
+			VAR ReportingDate = MAX(DIM_DATE[DATE])
+			VAR PriorMonthStart = EOMONTH(ReportingDate, -1) + 1
+			RETURN
+			CALCULATE(
+			    COUNTA(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[RISK_DETAIL_ID]),
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= PriorMonthStart,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate, 
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate
+			)
+			```
+		formatString: 0
+		displayFolder: _Measures
+		lineageTag: e6ba055f-7749-480a-86d3-ab86f398e03b
+
+	measure YTD_Commissions_Table_Analysis = ```
+			
+			VAR SelectedMeasure = SELECTEDVALUE('Table_Commissions'[Metric])
+			VAR ReportingDate = MAX(DIM_DATE[DATE])
+			VAR ContractInception = MIN(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[CONTRACT_INCEPTION_DATE])
+			RETURN
+			SWITCH(
+			    SelectedMeasure,
+			    "Commissions", CALCULATE(SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), 
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    "Min", CALCULATE(MIN(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]),
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    "Max", CALCULATE(MAX(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), 
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    "Average", CALCULATE(AVERAGE(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[BHVN_COMMISSIONS]), 
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    BLANK()
+			)
+			```
+		formatString: #,0
+		displayFolder: _Measures
+		lineageTag: fe4d0a91-6d99-49cd-b853-997cb0f7d4b9
+
+	measure YTD_GWP_Premium_Analysis =
+			
+			CALCULATE(SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]),
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[CONTRACT_INCEPTION_DATE],
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <=MAX(DIM_DATE[DATE]),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE]))
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		displayFolder: _Measures
+		lineageTag: 30dcb88b-4dbe-4877-ac84-59d891fc387a
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure YTD_GWP_Table_Analysis = ```
+			
+			VAR SelectedMeasure = SELECTEDVALUE('Table_GWP'[Metric])
+			VAR ReportingDate = MAX(DIM_DATE[DATE])
+			VAR ContractInception = MIN(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[CONTRACT_INCEPTION_DATE])
+			RETURN
+			SWITCH(
+			    SelectedMeasure,
+			    "GWP", CALCULATE(SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), 
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    "Min", CALCULATE(MIN(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]),
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    "Max", CALCULATE(MAX(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), 
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    "Average", CALCULATE(AVERAGE(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]), 
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= ContractInception,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate),
+			    BLANK()
+			)
+			```
+		formatString: #,0
+		displayFolder: _Measures
+		lineageTag: 6ce96c43-6ccd-4af4-9726-3299d17fe1e5
+
+		changedProperty = IsHidden
+
+	measure YTD_GWP_UPC_Analysis =
+			
+			VAR ReportingDate = MAX(DIM_DATE[DATE])
+			VAR earliestDate = DATE(YEAR(ReportingDate), 1, 1)
+			RETURN
+			CALCULATE(
+			    SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[GROSS_PM]),
+			    ALL(DIM_DATE),
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= earliestDate,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <= ReportingDate,
+			    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= ReportingDate
+			)
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Measures
+		lineageTag: 64963462-e792-4c06-a567-194a54f68304
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure YTD_NWP_Premium_Analysis =
+			
+			CALCULATE(SUM(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[NET_PREMIUM]),
+			        ALL(DIM_DATE),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] >= RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[CONTRACT_INCEPTION_DATE],
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE] <=MAX(DIM_DATE[DATE]),
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE]))
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		displayFolder: _Measures
+		lineageTag: 76552666-08ba-4e17-ad3c-3626b06ea8ac
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure %Current_Period_Commission =
+			
+			VAR SelectedMetric = SELECTEDVALUE('Table_Commissions'[Metric])
+			VAR TotalCommission = CALCULATE([Commissions_Current_Period], 'Table_Commissions'[Metric] = "Commissions")
+			VAR TotalGWP = CALCULATE([GWP_Current_Period], 'Table_GWP'[Metric] = "GWP")
+			VAR CommissionValue = [Commissions_Current_Period]
+			VAR GWPValue = CALCULATE([GWP_Current_Period], TREATAS(VALUES('Table_Commissions'[Metric]), 'Table_GWP'[Metric]))
+			RETURN
+			SWITCH(
+			    SelectedMetric,
+			    "Commissions", DIVIDE(TotalCommission, TotalGWP, 0),
+			    "Average", DIVIDE(CommissionValue, GWPValue, 0),
+			    "Max", DIVIDE(CommissionValue, GWPValue, 0),
+			    "Min", DIVIDE(CommissionValue, GWPValue, 0),
+			    BLANK()
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: _Measures
+		lineageTag: 5c0ccd28-1bda-44fe-8ef3-33a140c2b92d
+
+	measure %YTD_Commission =
+			
+			VAR SelectedMetric = SELECTEDVALUE('Table_Commissions'[Metric])
+			VAR TotalCommission = CALCULATE([YTD_Commissions_Table_Analysis], 'Table_Commissions'[Metric] = "Commissions")
+			VAR TotalGWP = CALCULATE([YTD_GWP_Table_Analysis], 'Table_GWP'[Metric] = "GWP")
+			VAR CommissionValue = [YTD_Commissions_Table_Analysis]
+			VAR GWPValue = CALCULATE([YTD_GWP_Table_Analysis], TREATAS(VALUES('Table_Commissions'[Metric]), 'Table_GWP'[Metric]))
+			RETURN
+			SWITCH(
+			    SelectedMetric,
+			    "Commissions", DIVIDE(TotalCommission, TotalGWP, 0),
+			    "Average", DIVIDE(CommissionValue, GWPValue, 0),
+			    "Max", DIVIDE(CommissionValue, GWPValue, 0),
+			    "Min", DIVIDE(CommissionValue, GWPValue, 0),
+			    BLANK()
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: _Measures
+		lineageTag: 00871022-6c62-444e-9b37-e085522d6afc
+
+	measure %Current_Month_Commission =
+			
+			VAR CurrentMonthCommission = [Total_Commissions]
+			VAR CurrentMonthGWP = [Total_GWP]
+			RETURN
+			    DIVIDE(CurrentMonthCommission, CurrentMonthGWP, 0)
+		formatString: 0%;-0%;0%
+		displayFolder: _Measures
+		lineageTag: 9cc3c733-6bf3-410f-bba4-55a0446593f8
+
+	measure %Prior_Month_Commission =
+			
+			VAR PriorMonthCommission = [Prior_Month_Commissions]
+			VAR PriorMonthGWP = [Prior_Month_GWP]
+			RETURN
+			    DIVIDE(PriorMonthCommission, PriorMonthGWP, 0)
+		formatString: 0%;-0%;0%
+		displayFolder: _Measures
+		lineageTag: e9df62c0-0d74-4315-9c3b-8ef7ffe598f8
+
+	column CONTRACT_REFERENCE
+		dataType: string
+		lineageTag: 0ffc0bee-0f66-4adc-8c5d-6d2444d5a42e
+		summarizeBy: none
+		sourceColumn: CONTRACT_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_REFERENCE
+		dataType: string
+		lineageTag: bc601f92-37f8-4042-95ed-1eedd5db3575
+		summarizeBy: none
+		sourceColumn: RISK_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_DETAIL_ID
+		dataType: string
+		lineageTag: fa79d638-862c-4405-bc9f-5d001d6f3078
+		summarizeBy: none
+		sourceColumn: RISK_DETAIL_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_INCEPTION_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e5f8d377-a53a-4db5-b099-604386b160c6
+		summarizeBy: none
+		sourceColumn: CONTRACT_INCEPTION_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EFFECTIVE_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 9c6493d2-8721-4d23-96cc-d0a631afb052
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column END_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 098fd485-3854-4e98-a469-932b7c4804ca
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EXPIRY_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 6cf1f828-4eea-46dc-a847-03069ab22645
+		summarizeBy: none
+		sourceColumn: EXPIRY_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column INCEPTION_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: acbd2f76-237a-49d5-ae57-10b2d1fee961
+		summarizeBy: none
+		sourceColumn: INCEPTION_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column REPORT_PERIOD
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 893a0055-13b7-460a-a9a5-a1c1f3a1702c
+		summarizeBy: none
+		sourceColumn: REPORT_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column CONTRACT_INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: 65dec89e-b350-4956-99f7-133f47d8af4f
+		summarizeBy: sum
+		sourceColumn: CONTRACT_INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EFFECTIVE_DATE_KEY
+		dataType: double
+		lineageTag: 0c27fc38-1e52-4359-af22-d512be71e72e
+		summarizeBy: sum
+		sourceColumn: EFFECTIVE_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column END_DATE_KEY
+		dataType: double
+		lineageTag: fb38e2e6-a376-4dff-bc0c-bea87512f00b
+		summarizeBy: sum
+		sourceColumn: END_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EXPIRY_DATE_KEY
+		dataType: double
+		lineageTag: c85687c4-7aa3-4b49-a535-729a5240b7d0
+		summarizeBy: sum
+		sourceColumn: EXPIRY_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: 39f2bb6f-c763-447f-8a13-4d386fffb2a1
+		summarizeBy: sum
+		sourceColumn: INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLASS_OF_BUSINESS_KEY
+		dataType: double
+		lineageTag: bfbe0b25-1642-470c-8496-a7ef399f3cc8
+		summarizeBy: none
+		sourceColumn: CLASS_OF_BUSINESS_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INSUR_NAME_KEY
+		dataType: string
+		lineageTag: f559dc2c-d63d-45cc-be8f-9dfc3760e988
+		summarizeBy: none
+		sourceColumn: INSUR_NAME_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_CURRENCY_KEY
+		dataType: string
+		lineageTag: d968d4e3-8755-4fb6-a68a-3832c934dedc
+		summarizeBy: none
+		sourceColumn: PM_CURRENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_TRANSACTION_TYPE_KEY
+		dataType: string
+		lineageTag: 3f6d1f6e-97f4-471e-943a-d6709ec04115
+		summarizeBy: none
+		sourceColumn: RISK_TRANSACTION_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SI_CURRENCY_KEY
+		dataType: string
+		lineageTag: 1bf8912b-8e3d-4f25-bf55-029e48ca8c2a
+		summarizeBy: none
+		sourceColumn: SI_CURRENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BHVN_COMMISSIONS
+		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: 74b0168a-324b-455c-a90c-91b3213883d1
+		summarizeBy: sum
+		sourceColumn: BHVN_COMMISSIONS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column CARRIER_GPM
+		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: 683fc78a-2983-4bb5-b7d3-beb85b3fc41f
+		summarizeBy: sum
+		sourceColumn: CARRIER_GPM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column GROSS_PM
+		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: aaf96364-16e0-431a-83ed-7b7e05178964
+		summarizeBy: sum
+		sourceColumn: GROSS_PM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column MGA_COMMISSION
+		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: 4805599a-f744-4ded-ad18-15cc8917311d
+		summarizeBy: sum
+		sourceColumn: MGA_COMMISSION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column NET_PREMIUM
+		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: 0297ef49-f114-4861-9278-b96825bd4ab0
+		summarizeBy: sum
+		sourceColumn: NET_PREMIUM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column SI_AMOUNT
+		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: f550871f-0e73-42b0-9bf1-c848eaf46138
+		summarizeBy: sum
+		sourceColumn: SI_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	column POLICY_DETAIL_KEY
+		dataType: double
+		lineageTag: 2d8bcfed-b227-4f18-b64d-bcd42f361a4e
+		summarizeBy: none
+		sourceColumn: POLICY_DETAIL_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    SECURITY_Schema = Database{[Name="SECURITY",Kind="Schema"]}[Data],
+				    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT_View = SECURITY_Schema{[Name="RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT",Kind="View"]}[Data]
+				in
+				    RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

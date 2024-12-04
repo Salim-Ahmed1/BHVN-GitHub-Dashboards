@@ -1,0 +1,7 @@
+role test_001a_role
+	modelPermission: read
+
+	tablePermission CONTRACT_REFERENCES = [CONTRACT_DESCRIPTION] == "UKSA001A – Avid – Property XS (23)"
+
+	annotation PBI_Id = 802b26c55f4042aa912cb697e968d1be
+

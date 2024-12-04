@@ -1,0 +1,34 @@
+table DIM_SECTION_DESCRIPTION
+	lineageTag: b598e7a4-5129-4cf2-8130-5887f2e31014
+
+	column SECTION_DESCRIPTION
+		dataType: string
+		lineageTag: d55d868d-b33e-44a6-a4de-bf74b89cd01d
+		summarizeBy: none
+		sourceColumn: SECTION_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECTION_DESCRIPTION_KEY
+		dataType: string
+		lineageTag: 82e88206-bc1a-4f32-a1ff-456741269e67
+		summarizeBy: none
+		sourceColumn: SECTION_DESCRIPTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_SECTION_DESCRIPTION = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_SECTION_DESCRIPTION_View = REPORTING_Schema{[Name="DIM_SECTION_DESCRIPTION",Kind="View"]}[Data]
+				in
+				    DIM_SECTION_DESCRIPTION_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

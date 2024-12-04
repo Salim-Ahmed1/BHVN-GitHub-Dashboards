@@ -1,0 +1,84 @@
+table DIM_DATE
+	lineageTag: 9884e954-d42d-4a5a-ac5b-e76933dc204f
+
+	column DATE_KEY
+		dataType: double
+		lineageTag: 211af364-cb7d-43eb-873e-89c07f2f1c91
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 59facef3-813e-44af-b3a7-7336f0b750bc
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: cacf76a4-93e3-46ba-a4a1-830e8a9e22fc
+			defaultHierarchy: LocalDateTable_26cdb7a1-fb9f-4726-8efc-e2917787d6c7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YEAR
+		dataType: double
+		lineageTag: 248cfc90-63e3-42cd-82f8-865f5087eaaa
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTH
+		dataType: double
+		lineageTag: 6c1a003f-7b27-4a0b-a747-03111623d64c
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DAY
+		dataType: double
+		lineageTag: 4a539682-13dc-4592-9645-3f5dbe1c9721
+		summarizeBy: sum
+		sourceColumn: DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUARTER
+		dataType: double
+		lineageTag: 2ee2a6c8-ac75-45d9-a126-3bdf5ea536e6
+		summarizeBy: sum
+		sourceColumn: QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DIM_DATE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_DATE_View = REPORTING_Schema{[Name="DIM_DATE",Kind="View"]}[Data]
+				in
+				    DIM_DATE_View
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

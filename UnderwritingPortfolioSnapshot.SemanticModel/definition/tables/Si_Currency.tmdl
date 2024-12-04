@@ -1,0 +1,34 @@
+table Si_Currency
+	lineageTag: 4e40a98d-b1e2-4536-9025-16eeafa34f50
+
+	column Currency
+		lineageTag: b3458f04-79f5-46c6-92ea-2fb3114aa4b6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Currency]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency_ID
+		lineageTag: d753f9ba-9ef3-4f51-b521-d97f066000d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Currency_ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Si_Currency = calculated
+		mode: import
+		source =
+				
+				CALCULATETABLE(
+				    SELECTCOLUMNS(
+				        Dim_currency,
+				        "Currency", Dim_currency[currency],
+				        "Currency_ID", Dim_currency[currency_id]
+				    ),
+				    Dim_currency[currency_id] IN VALUES(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[SI_CURRENCY_KEY])
+				)
+
+	annotation PBI_Id = aa09f945a8304e99a16d2eb164456b94
+

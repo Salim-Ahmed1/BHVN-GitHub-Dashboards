@@ -1,0 +1,30 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["CONTRACT_REFERENCES","DIM_BHVN_COB","DIM_CURRENCY","DIM_DATE","FACT_PORTFOLIO_RISK_SNAPSHOT","Snowflake Server","Snowflake DWH","Snowflake Database"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1004.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_27d04d57-3c05-491b-b4d4-eccb7e2382d0
+ref table DIM_BHVN_COB
+ref table DIM_CURRENCY
+ref table DIM_DATE
+ref table LocalDateTable_26cdb7a1-fb9f-4726-8efc-e2917787d6c7
+ref table FACT_PORTFOLIO_RISK_SNAPSHOT
+ref table LocalDateTable_713c827c-ef71-4f26-9972-67c084ee512d
+ref table LocalDateTable_bc927c8f-c197-4840-8d1d-d13480c5b5b6
+ref table LocalDateTable_0af8f6a2-679d-4b79-9478-b8410328e3bc
+ref table LocalDateTable_54e53cdd-aac0-43e3-bb15-1fd89f900e21
+ref table CONTRACT_REFERENCES
+
+ref cultureInfo en-GB
+

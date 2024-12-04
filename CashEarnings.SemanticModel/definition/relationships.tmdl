@@ -1,0 +1,104 @@
+relationship 466a4b8b-69e8-4fcc-babe-dd70a5645689
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_DATE.DATE
+	toColumn: LocalDateTable_7cb87f4d-3a7d-4c64-9f9b-6023e70325d8.Date
+
+relationship 4747b285-570f-422c-98b2-590db59bb33b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.EFFECTIVE_DATE
+	toColumn: LocalDateTable_ad58ac32-8339-4e4a-bd83-39c2f8626233.Date
+
+relationship 10685242-3268-4e96-a5b5-628ed3e4a1d3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.END_DATE
+	toColumn: LocalDateTable_f46a2c2b-d64b-4b90-b4e1-f9f1d3226fb6.Date
+
+relationship 7a281b12-d15c-4711-9317-7c79c62dcb6d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.EXPIRY_DATE
+	toColumn: LocalDateTable_fd1b6f40-6c8e-49e8-9d14-dd24807fd0e4.Date
+
+relationship 8399da13-4d31-4cc9-af7e-08ed61d99aa2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.INCEPTION_DATE
+	toColumn: LocalDateTable_a15a4ed9-1ef2-4a1b-8e3d-865550619700.Date
+
+relationship 88974d0b-b6cb-1381-c9a8-b0662af5c3e8
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_CASH_EARNINGS.TAX_JURISDICTION_KEY
+	toColumn: DIM_BHVN_TAX_DETAIL.BHVN_TAX_JURISDICTION_ID
+
+relationship 98b7ed69-7380-d0fc-8cb6-05ccaec81368
+	isActive: false
+	fromColumn: FACT_CASH_EARNINGS.EFFECTIVE_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 0a46dec4-1699-45cf-47b4-42270b48d7b3
+	isActive: false
+	fromColumn: FACT_CASH_EARNINGS.END_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship fb2b0514-18d7-c1bf-ff26-b02a21bc85b5
+	isActive: false
+	fromColumn: FACT_CASH_EARNINGS.EXPIRY_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship ed8105b0-99d4-7247-0bab-88f6fc3b4a31
+	isActive: false
+	fromColumn: FACT_CASH_EARNINGS.SETTLEMENT_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 97c75f20-d175-67b7-ce48-a73d2e34c7ba
+	isActive: false
+	fromColumn: FACT_CASH_EARNINGS.INCEPTION_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship ebd8d498-4a0a-4091-ad95-e278f22c4dcb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.CONTRACT_INCEPTION_DATE
+	toColumn: LocalDateTable_39b09441-13ba-434b-b4db-916304eb496d.Date
+
+relationship a667a4ef-128c-2de9-1981-0be8463a3ed8
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_CASH_EARNINGS.PM_CURRENCY_KEY
+	toColumn: DIM_CURRENCY.CURRENCY_ID
+
+relationship a8559eb1-7ff8-4132-bad1-b39e022f4e41
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.VALID_FROM_DATETIME
+	toColumn: LocalDateTable_fbbf6abb-b97b-48a3-999d-8165a0e7ed37.Date
+
+relationship 54f58a3f-c285-4c0a-b941-cb42c476a560
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.VALID_TO_DATETIME
+	toColumn: LocalDateTable_a47b3a4a-cdf1-4210-b97c-38c69f1b2cfc.Date
+
+relationship 455d1352-ed49-7135-65a4-0e9e049b274d
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_CASH_EARNINGS.BHVN_COB_DETAIL_KEY
+	toColumn: DIM_BHVN_COB.BHVN_COB_DETAIL_ID
+
+relationship AutoDetected_097bec99-1988-4d34-aec6-a420e20a5351
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_CASH_EARNINGS.B_SECTION
+	toColumn: DIM_B_SECTION.B_SECTION
+
+relationship AutoDetected_ae37ac78-c984-4415-9294-4f1c3e20660d
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_CASH_EARNINGS.PM_TYPE_KEY
+	toColumn: DIM_PM_TYPE.PM_TYPE_KEY
+
+relationship 6945f065-2984-4233-9528-6f1d357cf105
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_CASH_EARNINGS.SETTLEMENT_DATETIME
+	toColumn: LocalDateTable_04626c78-c3ec-49b9-a398-ba22669cc10a.Date
+
+relationship AutoDetected_450402e4-e488-4965-92c0-f43d997c0d7a
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_CASH_EARNINGS.POLICY_TYPE_KEY
+	toColumn: DIM_POLICY_TYPE.POLICY_TYPE_KEY
+
+relationship AutoDetected_9b1b46d1-82ca-40dd-aa4b-e5e44cacd2db
+	fromColumn: FACT_CASH_EARNINGS.SECTION_DESCRIPTION_KEY
+	toColumn: DIM_SECTION_DESCRIPTION.SECTION_DESCRIPTION_KEY
+

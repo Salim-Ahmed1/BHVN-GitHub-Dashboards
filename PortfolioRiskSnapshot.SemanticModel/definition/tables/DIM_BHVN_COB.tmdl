@@ -1,0 +1,76 @@
+table DIM_BHVN_COB
+	lineageTag: f08fcf3e-a799-4cf0-9c11-75b68e8ae017
+
+	column BHVN_COB_DETAIL_ID
+		dataType: double
+		lineageTag: bd816268-f4e2-47d8-9d59-a50695ec98a2
+		summarizeBy: none
+		sourceColumn: BHVN_COB_DETAIL_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COB_1_ID
+		dataType: string
+		lineageTag: dc75086a-7521-48e3-a059-d4ff6799d684
+		summarizeBy: none
+		sourceColumn: COB_1_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COB_2_ID
+		dataType: string
+		lineageTag: a237aa94-5729-4cbb-95fd-b08e772eafa6
+		summarizeBy: none
+		sourceColumn: COB_2_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COB_3_ID
+		dataType: string
+		lineageTag: 9e0091e2-472f-48d8-850f-a8d77967c07b
+		summarizeBy: none
+		sourceColumn: COB_3_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COB_1
+		dataType: string
+		lineageTag: 775d72cc-c459-45c6-9d4e-c402d8e2d558
+		summarizeBy: none
+		sourceColumn: COB_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column COB_2
+		dataType: string
+		lineageTag: efff569a-4060-48cf-a232-c983036a5bf8
+		summarizeBy: none
+		sourceColumn: COB_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column COB_3
+		dataType: string
+		lineageTag: 0b313cc8-5678-441e-b42c-43bc338b6a5f
+		summarizeBy: none
+		sourceColumn: COB_3
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_BHVN_COB = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_BHVN_COB_View = REPORTING_Schema{[Name="DIM_BHVN_COB",Kind="View"]}[Data]
+				in
+				    DIM_BHVN_COB_View
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

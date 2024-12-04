@@ -1,0 +1,508 @@
+table FACT_UNMATCHED_REMITTANCES
+	lineageTag: a6af65e9-b45e-4f02-a50a-1fe3a1456d49
+
+	measure CarrierGPMFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_UNMATCHED_REMITTANCES[NET_TO_BHVN_AMOUNT]),
+			            FILTER(
+			                FACT_UNMATCHED_REMITTANCES,
+			                FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME] <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_UNMATCHED_REMITTANCES[NET_TO_BHVN_AMOUNT]),
+			        FILTER(
+			            FACT_UNMATCHED_REMITTANCES,
+			            FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME] <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: cde7530a-c33f-421f-93d5-4bd7b3bcf023
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MGACommFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_UNMATCHED_REMITTANCES[MGA_COMMISSION_AMOUNT]),
+			            FILTER(
+			                FACT_UNMATCHED_REMITTANCES,
+			                FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME] <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_UNMATCHED_REMITTANCES[MGA_COMMISSION_AMOUNT]),
+			        FILTER(
+			            FACT_UNMATCHED_REMITTANCES,
+			            FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME] <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 8bfe1fbb-d1a6-4ab2-838b-bc110f3e23e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GrossPMFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_UNMATCHED_REMITTANCES[GWP]),
+			            FILTER(
+			                FACT_UNMATCHED_REMITTANCES,
+			                FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME] <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_UNMATCHED_REMITTANCES[GWP]),
+			        FILTER(
+			            FACT_UNMATCHED_REMITTANCES,
+			            FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME] <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: d7b5af7d-50d8-415d-9738-8da2b285bf82
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AsAtInd =
+			CALCULATE(
+			    COUNTROWS(FACT_UNMATCHED_REMITTANCES),
+			    FILTER(
+			        FACT_UNMATCHED_REMITTANCES,
+			        DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <= MAX(DIM_DATE[DATE])
+			        &&
+			        DATEVALUE(FACT_UNMATCHED_REMITTANCES[CREATED_DATETIME]) <> BLANK()
+			        &&
+			        DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			        &&
+			        DATEVALUE(FACT_UNMATCHED_REMITTANCES[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])))
+		formatString: 0
+		lineageTag: ff648fae-6e60-4130-9e22-aa8625656d18
+
+	column UNMATCHED_REMITTANCES_ID
+		dataType: double
+		lineageTag: 3d205876-121e-4893-bee9-209c21383b48
+		summarizeBy: count
+		sourceColumn: UNMATCHED_REMITTANCES_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT_REFERENCE
+		dataType: string
+		lineageTag: c5e6baaf-2ef8-49be-be79-4ac8b376661e
+		summarizeBy: none
+		sourceColumn: CONTRACT_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_REFERENCE
+		dataType: string
+		lineageTag: 5ed88858-649e-44df-9d65-a58f3e4c552f
+		summarizeBy: none
+		sourceColumn: RISK_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION
+		dataType: string
+		lineageTag: 05a75fcc-8a08-46dc-883a-1d79c403692c
+		summarizeBy: none
+		sourceColumn: B_SECTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column EFFECTIVE_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 5aa9b1b9-52c1-4d4b-bce0-9db09dcbfe4f
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 4de6541d-df80-4b14-82ce-51ea37b92a32
+			defaultHierarchy: LocalDateTable_e58eb980-ed2d-446c-9a16-2a569ce8a0e4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column END_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: dfa3673a-4447-41bb-a008-c989c8077f8b
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		variation Variation
+			isDefault
+			relationship: 033283f6-5908-4ad9-8c69-b9990fd5f485
+			defaultHierarchy: LocalDateTable_ec487c58-83f3-4d74-9a97-f0aa910133f5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column EXPIRY_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 15207540-10cc-48d7-8f19-e14447f33952
+		summarizeBy: none
+		sourceColumn: EXPIRY_DATE
+
+		variation Variation
+			isDefault
+			relationship: 16379ac3-f42c-4881-af70-35c02e18634e
+			defaultHierarchy: LocalDateTable_84f46266-1fbd-4a15-b15f-5ce20b0c2fa3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column INCEPTION_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 342b0bb0-9fb0-4500-885f-22da4858865b
+		summarizeBy: none
+		sourceColumn: INCEPTION_DATE
+
+		variation Variation
+			isDefault
+			relationship: a0a8312f-b7e8-4c65-b404-d2124498a86a
+			defaultHierarchy: LocalDateTable_7ddb7bc6-f4ee-4361-a834-a8c8ca5afba0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column EFFECTIVE_DATE_KEY
+		dataType: double
+		lineageTag: c7b0a224-6940-4367-8379-96b34839d7da
+		summarizeBy: sum
+		sourceColumn: EFFECTIVE_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column END_DATE_KEY
+		dataType: double
+		lineageTag: 2cfbc0da-b1ea-44eb-899c-fa97b6fdd7f4
+		summarizeBy: sum
+		sourceColumn: END_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EXPIRY_DATE_KEY
+		dataType: double
+		lineageTag: a5e51bb2-4a72-4573-b8d7-4a606b9fe164
+		summarizeBy: sum
+		sourceColumn: EXPIRY_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: eefd2725-02ec-4cb8-a5dc-13e46006c958
+		summarizeBy: sum
+		sourceColumn: INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column POLICY_TYPE_KEY
+		dataType: string
+		lineageTag: 5f2ccbc9-b6b7-4848-9788-3a8e64efe249
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_CURRENCY_KEY
+		dataType: string
+		lineageTag: 066cd79a-bcb9-49a3-b17f-7da7e979948f
+		summarizeBy: none
+		sourceColumn: PM_CURRENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_TYPE_KEY
+		dataType: string
+		lineageTag: 882844c7-f5f1-4004-b253-92b940d41fe6
+		summarizeBy: none
+		sourceColumn: PM_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAX_DETAIL_KEY
+		dataType: string
+		lineageTag: b9a84f53-4926-48c9-8bc1-dd0bb2bc04d6
+		summarizeBy: none
+		sourceColumn: TAX_DETAIL_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BHVN_FEE_AMOUNT
+		dataType: double
+		lineageTag: c360b119-15c5-458e-adea-ede006b3b018
+		summarizeBy: sum
+		sourceColumn: BHVN_FEE_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MGA_COMMISSION_AMOUNT
+		dataType: double
+		lineageTag: de0a5c11-8a7e-4f89-8d42-3cfb9c4c01a7
+		summarizeBy: sum
+		sourceColumn: MGA_COMMISSION_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREATED_DATETIME
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: aac72433-7cf8-426d-8a02-62d8c2fead83
+		summarizeBy: none
+		sourceColumn: CREATED_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: 6e8dbddc-9a38-46ab-9bc6-4a84514c9e8c
+			defaultHierarchy: LocalDateTable_a389fc79-88d7-49bc-8ce4-8ac6f968381c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column CREATED_DATE_KEY
+		dataType: double
+		lineageTag: 0e4848ed-d5af-44d6-aad6-19935b3a072a
+		summarizeBy: none
+		sourceColumn: CREATED_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GWP
+		dataType: double
+		lineageTag: e2d2dd06-7038-4e07-b2ac-9e257e78bf46
+		summarizeBy: sum
+		sourceColumn: GWP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NET_TO_BHVN_AMOUNT
+		dataType: double
+		lineageTag: 690006ae-457f-4abf-bcc9-6210d870c21a
+		summarizeBy: sum
+		sourceColumn: NET_TO_BHVN_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREMIUM_TAX_AMOUNT
+		dataType: double
+		lineageTag: 3955e8ad-e757-424b-9518-16860ad9566e
+		summarizeBy: sum
+		sourceColumn: PREMIUM_TAX_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_DEDUCTIONS_AMOUNT
+		dataType: double
+		lineageTag: d597f2dd-80c7-450d-8794-c9afddb21eee
+		summarizeBy: sum
+		sourceColumn: TOTAL_DEDUCTIONS_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VALID_FROM_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c957ef23-a5f3-4ee4-b2a5-85836f150da1
+		summarizeBy: none
+		sourceColumn: VALID_FROM_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: 91e0ff69-e8a0-4b20-9f32-8f400d6ea41c
+			defaultHierarchy: LocalDateTable_fa038797-1f07-46a7-9f82-de3a17c7453b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALID_TO_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f6a15341-e007-43b1-8bc7-2e6fe3204eb3
+		summarizeBy: none
+		sourceColumn: VALID_TO_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: 2a7dbfdb-b95b-44d1-b719-959954529e3d
+			defaultHierarchy: LocalDateTable_cfefb0fa-64ea-4787-bbbf-2acb1446fc49.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALID_FROM_DATE_KEY
+		dataType: double
+		lineageTag: a80a8839-9681-4362-a688-c4d742937120
+		summarizeBy: sum
+		sourceColumn: VALID_FROM_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VALID_TO_DATE_KEY
+		dataType: double
+		lineageTag: 5ab4eeb6-c224-49f8-987e-68ee62df65f6
+		summarizeBy: sum
+		sourceColumn: VALID_TO_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IGNORE_CALCULATION_KEY
+		dataType: string
+		lineageTag: c8fbe922-7bd3-4474-901b-fad8788cd4ba
+		summarizeBy: none
+		sourceColumn: IGNORE_CALCULATION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION_KEY
+		dataType: string
+		lineageTag: 2fe52605-3fa5-4eba-8b45-ca0472d8cb47
+		summarizeBy: none
+		sourceColumn: B_SECTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECTION_DESCRIPTION_KEY
+		dataType: string
+		lineageTag: 6e6ef8a1-91a0-4166-ba9b-147090e3d26a
+		summarizeBy: none
+		sourceColumn: SECTION_DESCRIPTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column REMITTANCE_ID
+		dataType: string
+		lineageTag: 195c95e5-c250-425d-8831-700be4d59653
+		summarizeBy: none
+		sourceColumn: REMITTANCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATCH_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 83d945d5-58dc-4e98-8d6a-7fb3c2a5f5fa
+		summarizeBy: none
+		sourceColumn: MATCH_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: c1c9d46d-5973-4b11-8596-4d1c6eaf0a9c
+			defaultHierarchy: LocalDateTable_e5465a79-f4f7-4516-a94c-c2b1090a2653.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_UNMATCHED_REMITTANCES = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    FACT_UNMATCHED_REMITTANCES_View = REPORTING_Schema{[Name="FACT_UNMATCHED_REMITTANCES",Kind="View"]}[Data]
+				in
+				    FACT_UNMATCHED_REMITTANCES_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

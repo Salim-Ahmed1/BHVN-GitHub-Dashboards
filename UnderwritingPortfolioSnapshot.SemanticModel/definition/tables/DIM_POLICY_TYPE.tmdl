@@ -1,0 +1,38 @@
+table DIM_POLICY_TYPE
+	lineageTag: edb3e12a-960a-40aa-9d39-8b488613c220
+
+	measure Policy_Count = DISTINCTCOUNT('RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT'[RISK_DETAIL_ID])
+		formatString: 0
+		lineageTag: 5a33a0f8-cb91-4f6e-b060-81e338cd4df3
+
+	column POLICY_TYPE_KEY
+		dataType: string
+		lineageTag: 39ad541c-3b85-4a2c-8816-e04af86f17e7
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POLICY_TYPE
+		dataType: string
+		lineageTag: 5a939a26-b619-4601-a0a0-e3924fd97155
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_POLICY_TYPE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_POLICY_TYPE_View = REPORTING_Schema{[Name="DIM_POLICY_TYPE",Kind="View"]}[Data]
+				in
+				    DIM_POLICY_TYPE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,34 @@
+table Table_GWP
+	lineageTag: 0d760e52-9b7c-4efa-a400-3902e45f0793
+
+	column Metric
+		lineageTag: 2bbd9d3b-607a-404c-8e83-b9720abbe772
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Metric]
+		sortByColumn: SortOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: f83bf645-8349-4fe0-8514-859fad5fb031
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table_GWP = calculated
+		mode: import
+		source =
+				
+				UNION(
+				    ROW("Metric", "GWP", "SortOrder", 1),
+				    ROW("Metric", "Average", "SortOrder", 2),
+				    ROW("Metric", "Max", "SortOrder", 3),
+				    ROW("Metric", "Min", "SortOrder", 4)
+				)
+
+	annotation PBI_Id = 1f445f06e4054618b3db5f40da0de07d
+

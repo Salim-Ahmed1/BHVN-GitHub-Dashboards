@@ -1,0 +1,416 @@
+table FACT_PORTFOLIO_RISK_SNAPSHOT
+	lineageTag: 38372b7e-1a50-44e1-a0c9-02e2e9bde61b
+
+	measure 'Net Premium' = SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[GROSS_PM]) - SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_COMMISSIONS])
+		formatString: 0.00
+		lineageTag: 9aa9e9d1-6662-4e02-803e-55622a7d3498
+
+	measure AsAtInd =
+			
+			CALCULATE(
+			    COUNTROWS(FACT_PORTFOLIO_RISK_SNAPSHOT),
+			    FILTER(
+			        FACT_PORTFOLIO_RISK_SNAPSHOT,
+			        DATEVALUE(FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE]) < MAX(DIM_DATE[DATE])
+			        &&
+			        DATEVALUE(FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE]) >= MAX(DIM_DATE[DATE])
+			        ))
+		formatString: 0
+		lineageTag: 20fef932-61dc-432e-bda8-431cbe797a86
+
+	measure BHVNFeeFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_FEE]),
+			            FILTER(
+			                FACT_PORTFOLIO_RISK_SNAPSHOT,
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_FEE]),
+			        FILTER(
+			            FACT_PORTFOLIO_RISK_SNAPSHOT,
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] < MAX(DIM_DATE[DATE])
+			            &&
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: fe1b0775-165a-4879-bf68-7d6d8cc4bb16
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PoliciesFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            DISTINCTCOUNT(FACT_PORTFOLIO_RISK_SNAPSHOT[RISK_REFERENCE]),
+			            FILTER(
+			                FACT_PORTFOLIO_RISK_SNAPSHOT,
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        DISTINCTCOUNT(FACT_PORTFOLIO_RISK_SNAPSHOT[RISK_REFERENCE]),
+			        FILTER(
+			            FACT_PORTFOLIO_RISK_SNAPSHOT,
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] < MAX(DIM_DATE[DATE])
+			            &&
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: c7650f99-8df9-4061-9be0-e04fd62614e6
+
+	measure BHVNCommissionsFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_COMMISSIONS]),
+			            FILTER(
+			                FACT_PORTFOLIO_RISK_SNAPSHOT,
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_COMMISSIONS]),
+			        FILTER(
+			            FACT_PORTFOLIO_RISK_SNAPSHOT,
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] < MAX(DIM_DATE[DATE])
+			            &&
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: fa1ede0c-013c-4057-9d49-885c00e961a5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure NetPremiumFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[GROSS_PM]) - SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_COMMISSIONS]),
+			            FILTER(
+			                FACT_PORTFOLIO_RISK_SNAPSHOT,
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[GROSS_PM]) - SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_COMMISSIONS]),
+			        FILTER(
+			            FACT_PORTFOLIO_RISK_SNAPSHOT,
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] < MAX(DIM_DATE[DATE])
+			            &&
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: ae20f37b-5e53-4507-b348-dd8e817be249
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Balancing Item' = SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[GROSS_PM]) - SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_COMMISSIONS]) - SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[BHVN_FEE])
+		lineageTag: 6ef38497-2d7e-4188-8f45-d421816e4c8a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GrossPMFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[GROSS_PM]),
+			            FILTER(
+			                FACT_PORTFOLIO_RISK_SNAPSHOT,
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_PORTFOLIO_RISK_SNAPSHOT[GROSS_PM]),
+			        FILTER(
+			            FACT_PORTFOLIO_RISK_SNAPSHOT,
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[EFFECTIVE_DATE] < MAX(DIM_DATE[DATE])
+			            &&
+			            FACT_PORTFOLIO_RISK_SNAPSHOT[END_DATE] >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 9ec4b435-a415-47e5-a5cb-c250e9019b6f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RISK_ID
+		dataType: string
+		lineageTag: 4a6adb3c-8a23-408f-970b-a29495fbfb8c
+		summarizeBy: none
+		sourceColumn: RISK_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_REFERENCE
+		dataType: string
+		lineageTag: e0f08333-317a-4fb4-b6dc-100b6bea108b
+		summarizeBy: none
+		sourceColumn: CONTRACT_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_REFERENCE
+		dataType: string
+		lineageTag: b73136af-7dc7-49be-8e40-dc82221171c9
+		summarizeBy: none
+		sourceColumn: RISK_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column INCEPTION_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7c13b5cc-65ae-4848-882c-09354fe885b5
+		summarizeBy: none
+		sourceColumn: INCEPTION_DATE
+
+		variation Variation
+			isDefault
+			relationship: 50c770c1-64ab-458b-b4bf-6c4768032a8d
+			defaultHierarchy: LocalDateTable_713c827c-ef71-4f26-9972-67c084ee512d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CONTRACT_INCEPTION_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 31a3a46d-172c-4c9c-90ec-78017c9ec22d
+		summarizeBy: none
+		sourceColumn: CONTRACT_INCEPTION_DATE
+
+		variation Variation
+			isDefault
+			relationship: 55fbda17-cb17-40ee-8d74-f6d096858268
+			defaultHierarchy: LocalDateTable_bc927c8f-c197-4840-8d1d-d13480c5b5b6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EFFECTIVE_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: cd97243a-90ac-462a-8a79-ec8f7dfea9a7
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		variation Variation
+			isDefault
+			relationship: bd5063c5-ad19-46bb-ba5f-957182b66b1f
+			defaultHierarchy: LocalDateTable_0af8f6a2-679d-4b79-9478-b8410328e3bc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column END_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: f1300244-e8fb-4d65-a691-7d5105032874
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		variation Variation
+			isDefault
+			relationship: dfeccd30-2c0c-422a-b93e-74fb1ae9df58
+			defaultHierarchy: LocalDateTable_54e53cdd-aac0-43e3-bb15-1fd89f900e21.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: 453c4082-4fcb-4a11-91a5-387584ce464b
+		summarizeBy: sum
+		sourceColumn: INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT_INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: ec2b8ec7-ebc9-459c-ac4e-649ab25f3d67
+		summarizeBy: sum
+		sourceColumn: CONTRACT_INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EFFECTIVE_DATE_KEY
+		dataType: double
+		lineageTag: 14094666-7d89-45e5-8feb-6a7037802e76
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column END_DATE_KEY
+		dataType: double
+		lineageTag: c1d9c54b-0075-47b1-a00c-2cfd9f85e3cc
+		summarizeBy: sum
+		sourceColumn: END_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_PM
+		dataType: double
+		lineageTag: 2c431133-fcc1-41a8-91b7-c18711c147bc
+		summarizeBy: sum
+		sourceColumn: GROSS_PM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_COMMISSIONS
+		dataType: double
+		lineageTag: 70fb7e93-53a9-4930-ab1d-56b5f2794955
+		summarizeBy: sum
+		sourceColumn: BHVN_COMMISSIONS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_FEE
+		dataType: double
+		lineageTag: a38b39b5-51c5-437a-af69-4a9d2ba25cc4
+		summarizeBy: sum
+		sourceColumn: BHVN_FEE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_COB_DETAIL_KEY
+		dataType: double
+		lineageTag: 4edd45bd-876c-494b-909a-f0532370a532
+		summarizeBy: none
+		sourceColumn: BHVN_COB_DETAIL_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PM_CURRENCY_KEY
+		dataType: string
+		lineageTag: 068f0714-4bb2-4aba-a8e2-01db91f2b0f3
+		summarizeBy: none
+		sourceColumn: PM_CURRENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION_KEY
+		dataType: string
+		lineageTag: 5c0241a5-5538-415b-86d6-6531af9da3cf
+		summarizeBy: none
+		sourceColumn: B_SECTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_TYPE_KEY
+		dataType: string
+		lineageTag: d8ec2515-dcb8-44af-9112-52ede7df52a0
+		summarizeBy: none
+		sourceColumn: PM_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POLICY_TYPE_KEY
+		dataType: string
+		lineageTag: aaabfbcd-ca10-40b3-9588-ab67fed104ae
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECTION_DESCRIPTION_KEY
+		dataType: string
+		lineageTag: e8b23fb1-49a0-429e-8410-e9328b3863d7
+		summarizeBy: none
+		sourceColumn: SECTION_DESCRIPTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_DETAIL_ID
+		dataType: string
+		lineageTag: b2e1188c-a205-47ec-8e23-a2446687634f
+		summarizeBy: none
+		sourceColumn: RISK_DETAIL_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_PORTFOLIO_RISK_SNAPSHOT = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    FACT_PORTFOLIO_RISK_SNAPSHOT_View = REPORTING_Schema{[Name="FACT_PORTFOLIO_RISK_SNAPSHOT",Kind="View"]}[Data]
+				in
+				    FACT_PORTFOLIO_RISK_SNAPSHOT_View
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

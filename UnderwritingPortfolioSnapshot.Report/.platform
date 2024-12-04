@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "UnderwritingPortfolioSnapshot"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4763b841-3f77-4aba-8b21-610a320aec86"
+  }
+}

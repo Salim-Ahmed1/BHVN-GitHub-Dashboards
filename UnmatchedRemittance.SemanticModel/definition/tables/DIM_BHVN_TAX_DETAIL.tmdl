@@ -1,0 +1,34 @@
+table DIM_BHVN_TAX_DETAIL
+	lineageTag: 08ad46cb-775e-4a02-8ea7-6df7ff5b12a0
+
+	column BHVN_TAX_JURISDICTION_ID
+		dataType: string
+		lineageTag: afcc7750-8d98-4038-9e67-076f6104e5cd
+		summarizeBy: none
+		sourceColumn: BHVN_TAX_JURISDICTION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BHVN_TAX_JURISDICTION
+		dataType: string
+		lineageTag: dc6448fb-3045-4398-af2f-71d550b4b8a0
+		summarizeBy: none
+		sourceColumn: BHVN_TAX_JURISDICTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_BHVN_TAX_DETAIL = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_BHVN_TAX_DETAIL_View = REPORTING_Schema{[Name="DIM_BHVN_TAX_DETAIL",Kind="View"]}[Data]
+				in
+				    DIM_BHVN_TAX_DETAIL_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

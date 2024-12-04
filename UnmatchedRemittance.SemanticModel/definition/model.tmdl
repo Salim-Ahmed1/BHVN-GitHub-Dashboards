@@ -1,0 +1,37 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["CONTRACT_REFERENCES","DIM_BHVN_TAX_DETAIL","DIM_CURRENCY","DIM_DATE","FACT_UNMATCHED_REMITTANCES","DIM_B_SECTION","DIM_POLICY_TYPE","DIM_PM_TYPE","Snowflake Server","Snowflake DWH","Snowflake Database"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1004.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_ed89a763-a1df-4afb-8305-3885ee097e04
+ref table DIM_BHVN_TAX_DETAIL
+ref table DIM_CURRENCY
+ref table DIM_DATE
+ref table LocalDateTable_7cb87f4d-3a7d-4c64-9f9b-6023e70325d8
+ref table FACT_UNMATCHED_REMITTANCES
+ref table LocalDateTable_e58eb980-ed2d-446c-9a16-2a569ce8a0e4
+ref table LocalDateTable_ec487c58-83f3-4d74-9a97-f0aa910133f5
+ref table LocalDateTable_84f46266-1fbd-4a15-b15f-5ce20b0c2fa3
+ref table LocalDateTable_7ddb7bc6-f4ee-4361-a834-a8c8ca5afba0
+ref table LocalDateTable_a389fc79-88d7-49bc-8ce4-8ac6f968381c
+ref table LocalDateTable_fa038797-1f07-46a7-9f82-de3a17c7453b
+ref table LocalDateTable_cfefb0fa-64ea-4787-bbbf-2acb1446fc49
+ref table DIM_B_SECTION
+ref table DIM_POLICY_TYPE
+ref table DIM_PM_TYPE
+ref table LocalDateTable_e5465a79-f4f7-4516-a94c-c2b1090a2653
+ref table CONTRACT_REFERENCES
+
+ref cultureInfo en-GB
+

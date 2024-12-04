@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CashEarnings"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "20697c68-ceb3-4459-a889-8e27c46a03d5"
+  }
+}

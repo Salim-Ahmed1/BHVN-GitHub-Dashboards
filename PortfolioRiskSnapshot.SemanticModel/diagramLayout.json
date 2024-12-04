@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 52.857142857142861,
+            "y": 0
+          },
+          "nodeIndex": "DIM_BHVN_COB",
+          "nodeLineageTag": "f08fcf3e-a799-4cf0-9c11-75b68e8ae017",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 314.85714285714283,
+            "y": 0
+          },
+          "nodeIndex": "DIM_CURRENCY",
+          "nodeLineageTag": "1ddf279b-6ec9-45e3-b415-652a75c6d475",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 567.19999313354481,
+            "y": 0
+          },
+          "nodeIndex": "DIM_DATE",
+          "nodeLineageTag": "9884e954-d42d-4a5a-ac5b-e76933dc204f",
+          "size": {
+            "height": 206,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 555.42857142857144,
+            "y": 373.42857142857144
+          },
+          "nodeIndex": "FACT_PORTFOLIO_RISK_SNAPSHOT",
+          "nodeLineageTag": "38372b7e-1a50-44e1-a0c9-02e2e9bde61b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 821.485707419259,
+            "y": 0
+          },
+          "nodeIndex": "CONTRACT_REFERENCES",
+          "nodeLineageTag": "bdc8d9d2-e393-4631-a5d3-055a828ba7c8",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 70,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

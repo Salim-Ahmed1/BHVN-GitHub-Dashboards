@@ -1,0 +1,34 @@
+table DIM_TRANSACTION_DESC
+	lineageTag: 78704290-58be-4424-9166-f1f2ed1d59d8
+
+	column TRANSACTION_DESCRIPTION_ID
+		dataType: string
+		lineageTag: 0214c49c-1dd8-49ca-ae89-01db09a2b35a
+		summarizeBy: none
+		sourceColumn: TRANSACTION_DESCRIPTION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSACTION_DESCRIPTION
+		dataType: string
+		lineageTag: 1f976895-7f86-4b72-a54f-63926f808fa2
+		summarizeBy: none
+		sourceColumn: TRANSACTION_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_TRANSACTION_DESC = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_TRANSACTION_DESC_View = REPORTING_Schema{[Name="DIM_TRANSACTION_DESC",Kind="View"]}[Data]
+				in
+				    DIM_TRANSACTION_DESC_View
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

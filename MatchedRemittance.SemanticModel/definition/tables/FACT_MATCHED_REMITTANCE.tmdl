@@ -1,0 +1,496 @@
+table FACT_MATCHED_REMITTANCE
+	lineageTag: 21bfb246-1fef-4228-a030-2ec5949b9dfa
+
+	measure AsAtInd =
+			
+			CALCULATE(
+			    COUNTROWS(FACT_MATCHED_REMITTANCE),
+			    FILTER(
+			        FACT_MATCHED_REMITTANCE,
+			        DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <= MAX(DIM_DATE[DATE])
+			        &&
+			        DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			        &&
+			        DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			        &&
+			        DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        ))
+		formatString: 0
+		lineageTag: 86a309b2-360f-4d97-9ae5-3e632963b68f
+
+	measure GrossPMFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_MATCHED_REMITTANCE[GROSS_PM_AMOUNT]),
+			            FILTER(
+			                FACT_MATCHED_REMITTANCE,
+			                FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_MATCHED_REMITTANCE[GROSS_PM_AMOUNT]),
+			        FILTER(
+			            FACT_MATCHED_REMITTANCE,
+			            FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE] <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 44144b2a-18d7-4e69-823c-c072c22c1bc8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CarrierGPMFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_MATCHED_REMITTANCE[CARRIER_GPM_AMOUNT]),
+			            FILTER(
+			                FACT_MATCHED_REMITTANCE,
+			                FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_MATCHED_REMITTANCE[CARRIER_GPM_AMOUNT]),
+			        FILTER(
+			            FACT_MATCHED_REMITTANCE,
+			            FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE] <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 5b388440-30b3-4d71-ba3d-dae20beffd98
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MGACommFiltered = ```
+			
+			IF(
+			    ISBLANK(
+			        CALCULATE(
+			            SUM(FACT_MATCHED_REMITTANCE[MGA_COMMISSION_AMOUNT]),
+			            FILTER(
+			                FACT_MATCHED_REMITTANCE,
+			                FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE] <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			                &&
+			                DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE(
+			        SUM(FACT_MATCHED_REMITTANCE[MGA_COMMISSION_AMOUNT]),
+			        FILTER(
+			            FACT_MATCHED_REMITTANCE,
+			            FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE] <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[SETTLEMENT_DATE]) <> BLANK()
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_FROM_DATETIME]) <= MAX(DIM_DATE[DATE])
+			            &&
+			            DATEVALUE(FACT_MATCHED_REMITTANCE[VALID_TO_DATETIME]) >= MAX(DIM_DATE[DATE])
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 59a8a0bf-68d4-47cc-80e6-bde42ae820b8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT_REFERENCE
+		dataType: string
+		lineageTag: f79b2203-b9d7-435d-889d-5268546de89a
+		summarizeBy: none
+		sourceColumn: CONTRACT_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_REFERENCE
+		dataType: string
+		lineageTag: e2d6c80f-a247-4ad5-8ea2-1738544d3af9
+		summarizeBy: none
+		sourceColumn: RISK_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAX_DETAIL_KEY
+		dataType: string
+		lineageTag: e88f7b3d-3ee7-46c2-8819-cd3bd2bdf83b
+		summarizeBy: none
+		sourceColumn: TAX_DETAIL_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_CURRENCY_KEY
+		dataType: string
+		lineageTag: df0a1ec6-eab2-4d34-96c2-a9fa5ced055a
+		summarizeBy: none
+		sourceColumn: PM_CURRENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POLICY_TYPE_KEY
+		dataType: string
+		lineageTag: 12eb3542-276e-4d59-842d-0caaf4ca27dd
+		summarizeBy: none
+		sourceColumn: POLICY_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION
+		dataType: string
+		lineageTag: c3671852-af70-47a1-966f-5fa5db9cdbb6
+		summarizeBy: none
+		sourceColumn: B_SECTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_INCEPTION_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: bca3d60a-fa89-4794-baae-7ef2e8b85df4
+		summarizeBy: none
+		sourceColumn: CONTRACT_INCEPTION_DATE
+
+		variation Variation
+			isDefault
+			relationship: 54987d56-2427-4cf1-8e3b-dc14056d0f4e
+			defaultHierarchy: LocalDateTable_1b34afb7-c799-4a14-8140-945073a74bab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column SETTLEMENT_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: ebf35ee7-eb61-4561-af9b-8f88d567737f
+		summarizeBy: none
+		sourceColumn: SETTLEMENT_DATE
+
+		variation Variation
+			isDefault
+			relationship: 39efed85-2ceb-4b8d-b2aa-9a678cddf396
+			defaultHierarchy: LocalDateTable_b0b14f06-856c-4cb8-8e60-dd73fbb73ffe.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column INCEPTION_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 0f1d7638-358c-467d-a860-813848d0c1c9
+		summarizeBy: none
+		sourceColumn: INCEPTION_DATE
+
+		variation Variation
+			isDefault
+			relationship: 2131f6ca-2f1f-4dfd-af2b-42136b9fd5bc
+			defaultHierarchy: LocalDateTable_3db68e59-0d1c-4622-a684-66b81c2347ea.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column EFFECTIVE_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 181b3067-028c-448b-b227-34483a57b58d
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 2574544b-5b7e-46d7-ad95-371fecc708d3
+			defaultHierarchy: LocalDateTable_21467f32-c369-48c4-8b07-7e33e44e3fe2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column EXPIRY_DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: de4a5414-e22f-426b-8b66-c2c383ae1395
+		summarizeBy: none
+		sourceColumn: EXPIRY_DATE
+
+		variation Variation
+			isDefault
+			relationship: c30d46c8-5bff-4aca-b777-02b46f1efa5e
+			defaultHierarchy: LocalDateTable_a1264ba7-61c1-40cd-9904-b0b2fb5844f1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column CONTRACT_INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: 8db69833-cb45-4505-bada-126c462e354a
+		summarizeBy: sum
+		sourceColumn: CONTRACT_INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLEMENT_DATE_KEY
+		dataType: double
+		lineageTag: 1c38d420-3516-45ed-9273-370b2ca8063d
+		summarizeBy: none
+		sourceColumn: SETTLEMENT_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INCEPTION_DATE_KEY
+		dataType: double
+		lineageTag: 9ea68a4a-0604-45d8-89ec-3b21c2bc0699
+		summarizeBy: sum
+		sourceColumn: INCEPTION_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EFFECTIVE_DATE_KEY
+		dataType: double
+		lineageTag: d40006c1-7055-4ca4-89eb-80902a8a26fb
+		summarizeBy: sum
+		sourceColumn: EFFECTIVE_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EXPIRY_DATE_KEY
+		dataType: double
+		lineageTag: 775f2b36-1b16-4047-a745-e4a8cb45d8a2
+		summarizeBy: sum
+		sourceColumn: EXPIRY_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROSS_PM_AMOUNT
+		dataType: double
+		lineageTag: f587fd90-08b6-41ae-bd31-9956d13b9c53
+		summarizeBy: sum
+		sourceColumn: GROSS_PM_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MGA_COMMISSION_AMOUNT
+		dataType: double
+		lineageTag: 4d8bed73-751f-43c9-a1f5-26c56e1d7334
+		summarizeBy: sum
+		sourceColumn: MGA_COMMISSION_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_COMMISSIONS_AMOUNT
+		dataType: double
+		lineageTag: 7fcadfc9-64fd-4f71-ae5f-238955e19ca2
+		summarizeBy: sum
+		sourceColumn: BHVN_COMMISSIONS_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CARRIER_GPM_AMOUNT
+		dataType: double
+		lineageTag: cee46506-a268-4d3d-8d19-4e27d0884d8d
+		summarizeBy: sum
+		sourceColumn: CARRIER_GPM_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_FEE_AMOUNT
+		dataType: double
+		lineageTag: 8cf82505-8e88-45b2-b097-1dde1997ce07
+		summarizeBy: sum
+		sourceColumn: BHVN_FEE_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_TAX_AMOUNT
+		dataType: double
+		lineageTag: f46ab8b1-ddc7-47fc-9a0f-72d49be4c75f
+		summarizeBy: sum
+		sourceColumn: BHVN_TAX_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VALID_FROM_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4a9c3e54-1659-4155-8205-baca58cc1ea8
+		summarizeBy: none
+		sourceColumn: VALID_FROM_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: f5e978a4-9e62-4b08-8b74-44ff3c32c4f6
+			defaultHierarchy: LocalDateTable_7d9ad04d-5c9f-4bd8-93dc-2d5f802060b7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALID_TO_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 91f2882b-3ddc-48c6-a79c-1deb6a115147
+		summarizeBy: none
+		sourceColumn: VALID_TO_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: 251ca2ce-f96c-4985-862d-ce52068b3aa8
+			defaultHierarchy: LocalDateTable_9866ff9b-155c-46ad-a560-fb8ef659f8e5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALID_FROM_DATE_KEY
+		dataType: double
+		lineageTag: 056e0701-ff16-4c39-9bcb-f7e9e53fc89e
+		summarizeBy: sum
+		sourceColumn: VALID_FROM_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VALID_TO_DATE_KEY
+		dataType: double
+		lineageTag: 4a38a0b0-e502-45fb-9685-5230c2df1e85
+		summarizeBy: sum
+		sourceColumn: VALID_TO_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BHVN_COB_DETAIL_KEY
+		dataType: double
+		lineageTag: cacfe264-fff0-417c-9289-3dbd4eeaeeb9
+		summarizeBy: none
+		sourceColumn: BHVN_COB_DETAIL_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IGNORE_CALCULATION_KEY
+		dataType: string
+		lineageTag: a9a99679-9da6-4fbb-9e11-a65f8c2a49ef
+		summarizeBy: none
+		sourceColumn: IGNORE_CALCULATION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_SECTION_KEY
+		dataType: string
+		lineageTag: a36318a6-816d-4542-84ca-d0ecd66afbbf
+		summarizeBy: none
+		sourceColumn: B_SECTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECTION_DESCRIPTION_KEY
+		dataType: string
+		lineageTag: 9a9b5c7b-2564-44e6-afb1-314700409f5c
+		summarizeBy: none
+		sourceColumn: SECTION_DESCRIPTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PM_TYPE_KEY
+		dataType: string
+		lineageTag: 5222931a-9bbe-4810-8616-263cd3c47bec
+		summarizeBy: none
+		sourceColumn: PM_TYPE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column REMITTANCE_ID
+		dataType: string
+		lineageTag: 91e07e45-97cc-4323-96ee-c70f7d62e06e
+		summarizeBy: none
+		sourceColumn: REMITTANCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_MATCHED_REMITTANCE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    DEV_MODEL_Database = Source{[Name="DEV_MODEL",Kind="Database"]}[Data],
+				    REPORTING_Schema = DEV_MODEL_Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    FACT_MATCHED_REMITTANCE_View = REPORTING_Schema{[Name="FACT_MATCHED_REMITTANCE",Kind="View"]}[Data]
+				in
+				    FACT_MATCHED_REMITTANCE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

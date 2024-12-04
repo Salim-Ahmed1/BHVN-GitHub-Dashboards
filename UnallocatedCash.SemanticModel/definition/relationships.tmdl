@@ -1,0 +1,29 @@
+relationship dd74148f-8cbf-475c-bbf0-0451ae959dbd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_UNALLOCATED_CASH.TRANSACTION_DATE
+	toColumn: LocalDateTable_b0f90099-6b94-4b6d-8968-e5b10b0f01d0.Date
+
+relationship ebe84d58-cda8-6c09-ac93-3fef79a183e1
+	fromColumn: FACT_UNALLOCATED_CASH.CURRENCY_KEY
+	toColumn: DIM_CURRENCY.CURRENCY_ID
+
+relationship 89ac39a4-f837-42f9-bf0a-c486036be044
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_UNALLOCATED_CASH.CREATED_DATE
+	toColumn: LocalDateTable_f550afca-ea7a-4eff-9315-35f33a4b4f46.Date
+
+relationship a031155e-9216-7770-ea67-1d38c3bb7e04
+	crossFilteringBehavior: bothDirections
+	fromColumn: FACT_UNALLOCATED_CASH.TRANSACTION_DESCRIPTION_KEY
+	toColumn: DIM_TRANSACTION_DESC.TRANSACTION_DESCRIPTION_ID
+
+relationship c800a4f5-17ec-40ca-a5a5-8de683c337a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_UNALLOCATED_CASH.MATCHED_DATE
+	toColumn: LocalDateTable_fb7a7d45-9858-4e48-8ee2-d249c0d996eb.Date
+
+relationship 035be1db-efcf-4c58-b7b8-1d34b65b5aef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_DATE.DATE
+	toColumn: LocalDateTable_b584bef7-205c-478a-97bd-7d2ad489cf82.Date
+

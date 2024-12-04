@@ -1,0 +1,7 @@
+role test_002a_role
+	modelPermission: read
+
+	tablePermission CONTRACT_REFERENCES = [CONTRACT_DESCRIPTION] == "UKSA002A – AUL – PI (24)"
+
+	annotation PBI_Id = bd11979dffe74025adaaec971033aa08
+

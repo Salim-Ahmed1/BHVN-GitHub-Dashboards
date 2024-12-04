@@ -1,0 +1,175 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "c082042eb96dbaee2a91",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 720,
+    "width": 911.11111111111109,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "AsAtInd"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.AsAtInd",
+              "nativeQueryRef": "AsAtInd"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "rowcount"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.rowcount",
+              "nativeQueryRef": "rowcount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "CONTRACT_REFERENCE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.CONTRACT_REFERENCE",
+              "nativeQueryRef": "CONTRACT_REFERENCE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "RISK_REFERENCE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.RISK_REFERENCE",
+              "nativeQueryRef": "RISK_REFERENCE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "GWP"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.GWP)",
+              "nativeQueryRef": "GWP",
+              "displayName": "GWP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FACT_CASH_EARNINGS"
+                        }
+                      },
+                      "Property": "BHVN_FEE_AMOUNT"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FACT_CASH_EARNINGS.BHVN_FEE_AMOUNT)",
+              "nativeQueryRef": "BHVN Fee",
+              "displayName": "BHVN Fee"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "END_DATE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.END_DATE",
+              "nativeQueryRef": "END_DATE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FACT_CASH_EARNINGS"
+                    }
+                  },
+                  "Property": "EFFECTIVE_DATE"
+                }
+              },
+              "queryRef": "FACT_CASH_EARNINGS.EFFECTIVE_DATE",
+              "nativeQueryRef": "EFFECTIVE_DATE"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.1
+                    }
+                  }
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

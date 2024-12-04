@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "UnallocatedCash"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1c5b41bb-fd27-4471-a77e-b9d68f514a23"
+  }
+}

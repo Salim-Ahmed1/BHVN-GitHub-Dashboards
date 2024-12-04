@@ -1,0 +1,137 @@
+table DIM_DATE
+	lineageTag: a95026cb-a7fc-463f-a20c-19836e5986ac
+
+	measure AsAt =
+			
+			CALCULATE(
+			    COUNTROWS(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT),
+			    FILTER(
+			        RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT,
+			        DATEVALUE(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[EFFECTIVE_DATE]) < MAX(DIM_DATE[DATE])
+			        &&
+			        DATEVALUE(RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT[END_DATE]) > MAX(DIM_DATE[DATE])
+			    )
+			)
+		formatString: 0
+		lineageTag: a6844c1c-a887-42a8-87aa-29898f1c6375
+
+	column DATE_KEY
+		dataType: double
+		lineageTag: f9fec4e1-22a5-4256-84b4-44c3d4ca69ff
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 80496f47-3910-49ef-aa38-eadd4f31675c
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column YEAR
+		dataType: double
+		lineageTag: 2a632ae1-b078-4846-8709-c90bfbf6d405
+		summarizeBy: none
+		sourceColumn: YEAR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTH
+		dataType: double
+		lineageTag: 957f9bcd-d081-4831-a779-666fcc02519c
+		summarizeBy: none
+		sourceColumn: MONTH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DAY
+		dataType: double
+		lineageTag: bd28aa51-7e9a-4fad-a93b-362659e5b339
+		summarizeBy: none
+		sourceColumn: DAY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUARTER
+		dataType: double
+		lineageTag: 07c009c6-085b-4884-900d-f21b6dd50c05
+		summarizeBy: none
+		sourceColumn: QUARTER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LastDayOfMonth = EOMONTH(DIM_DATE[DATE], 0)
+		formatString: dd-mmm-yy
+		lineageTag: 9d114a9f-849c-486e-8b6a-55a6cbf04e32
+		summarizeBy: none
+		sortByColumn: YEAR
+
+		changedProperty = DataType
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column MonthYear = FORMAT(DIM_DATE[DATE], "mmm-yy")
+		dataType: string
+		lineageTag: 0b7eb0ca-5c58-4c22-b021-6a102ca1b7df
+		summarizeBy: none
+		sortByColumn: LastDayOfMonth
+
+		changedProperty = SortByColumn
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_DATE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(#"Snowflake Server",#"Snowflake DWH",[Role="PBI_REPORTING_ROLE"]),
+				    Database = Source{[Name=#"Snowflake Database" ,Kind="Database"]}[Data],
+				    REPORTING_Schema = Database{[Name="REPORTING",Kind="Schema"]}[Data],
+				    DIM_DATE_View = REPORTING_Schema{[Name="DIM_DATE",Kind="View"]}[Data]
+				in
+				    DIM_DATE_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

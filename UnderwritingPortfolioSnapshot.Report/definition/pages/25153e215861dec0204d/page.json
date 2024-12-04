@@ -1,0 +1,313 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.2.0/schema.json",
+  "name": "25153e215861dec0204d",
+  "displayName": "Risk Details",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2f326179b96b156ef389",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_GWP"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "50d21e0f527a2e7f8710",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_Commissions"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "7fe893813f876cb41736",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_NWP"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "ecdc9da41d7e93469792",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_Policies"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "1ebd567d0bd7517b6284",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "YTD_GWP_UPC_Analysis"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "3b82889dfab95d7df6c1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "YTD_GWP_Table_Analysis"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "063bde41cb9be6b5e734",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "YTD_Commissions_Table_Analysis"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "a2caef6e0e4aa40e2755",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_GWP"
+              }
+            },
+            "Property": "Metric"
+          }
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "5262c405043c2e2c438a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_Commissions"
+              }
+            },
+            "Property": "Metric"
+          }
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "60a6687563ea48d8143f",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "aa2c92c87fd90b357970",
+        "boundFilter": "2f326179b96b156ef389",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_GWP"
+          }
+        }
+      },
+      {
+        "name": "5b93669b6425d8707769",
+        "boundFilter": "50d21e0f527a2e7f8710",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_Commissions"
+          }
+        }
+      },
+      {
+        "name": "70163963ce6d7199ec65",
+        "boundFilter": "7fe893813f876cb41736",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_NWP"
+          }
+        }
+      },
+      {
+        "name": "62da2b6f94116c0ede58",
+        "boundFilter": "ecdc9da41d7e93469792",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "Total_Policies"
+          }
+        }
+      },
+      {
+        "name": "8a66ce393c0b24776bdc",
+        "boundFilter": "1ebd567d0bd7517b6284",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "YTD_GWP_UPC_Analysis"
+          }
+        }
+      },
+      {
+        "name": "502fb6a43b309b758728",
+        "boundFilter": "3b82889dfab95d7df6c1",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "YTD_GWP_Table_Analysis"
+          }
+        }
+      },
+      {
+        "name": "6ed07e1a5b044b9b1f3b",
+        "boundFilter": "063bde41cb9be6b5e734",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLS_UNDERWRITING_PORTFOLIO_SNAPSHOT"
+              }
+            },
+            "Property": "YTD_Commissions_Table_Analysis"
+          }
+        }
+      },
+      {
+        "name": "73455ca8a315081d3344",
+        "boundFilter": "a2caef6e0e4aa40e2755",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_GWP"
+              }
+            },
+            "Property": "Metric"
+          }
+        }
+      },
+      {
+        "name": "e832a2e4014f074f5546",
+        "boundFilter": "5262c405043c2e2c438a",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Table_Commissions"
+              }
+            },
+            "Property": "Metric"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'pbibhvnbackground.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "pbibhvnbackground3118086492861576.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fit'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode"
+}

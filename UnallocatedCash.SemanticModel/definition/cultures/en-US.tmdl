@@ -1,0 +1,4004 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_currency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_CURRENCY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim currency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DIM_CURRENCY": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dim coinage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dim exchange": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim cash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim prevalence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dim frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dim popularity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dim vogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dim circulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dim commonness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "dim_currency.currency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_CURRENCY",
+			          "ConceptualProperty": "CURRENCY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "currency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "coinage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "exchange": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cash": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "prevalence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "popularity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "vogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "circulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "commonness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "dim_currency.currency_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_CURRENCY",
+			          "ConceptualProperty": "CURRENCY_ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "currency id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CURRENCY_ID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "currency identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "currency identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "currency identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "currency credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DIM_DATE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.date.variation.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATE",
+			          "VariationSource": "DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_date.date.variation.date_hierarchy.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATE",
+			          "VariationSource": "DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_date.date.variation.date_hierarchy.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATE",
+			          "VariationSource": "DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_date.date.variation.date_hierarchy.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATE",
+			          "VariationSource": "DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_date.date.variation.date_hierarchy.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_DATE",
+			          "VariationSource": "DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fact unallocated cash": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FACT_UNALLOCATED_CASH": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fact unallocated money": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "fact unallocated currency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "fact unallocated dough": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "fact unallocated coin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "fact unallocated note": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.transaction_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "TRANSACTION_DATE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TRANSACTION_DATE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "transaction moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "transaction period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.transaction_date.variation.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "TRANSACTION_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.transaction_date.variation.date_hierarchy.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "TRANSACTION_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "transaction yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "transaction moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.transaction_date.variation.date_hierarchy.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "TRANSACTION_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.846
+			          }
+			        },
+			        {
+			          "transaction qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "transaction moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.transaction_date.variation.date_hierarchy.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "TRANSACTION_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "transaction mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "transaction moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.transaction_date.variation.date_hierarchy.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "TRANSACTION_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "transaction moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.currency_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "CURRENCY_KEY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "currency key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CURRENCY_KEY": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "major": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "essential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "currency solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "currency explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "currency basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.transaction_date_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "TRANSACTION_DATE_KEY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "transaction date key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TRANSACTION_DATE_KEY": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "transaction moment key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction period key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "transaction date solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "transaction date explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "transaction date basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "transaction date recipe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "transaction date interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "transaction date resolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.transaction_description_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "TRANSACTION_DESCRIPTION_KEY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "transaction description key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TRANSACTION_DESCRIPTION_KEY": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "description key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "transaction appearance key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction descriptor key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction explanation key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "transaction specification key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "appearance key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "descriptor key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "explanation key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "specification key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "transaction account key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "transaction overview key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "balance": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "equilibrium": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "stability": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "steadiness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "poise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "weighing scale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.allocated": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "ALLOCATED"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "allocated": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_transaction_desc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_TRANSACTION_DESC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim transaction desc": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DIM_TRANSACTION_DESC": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim transaction description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        }
+			      ]
+			    },
+			    "dim_transaction_desc.transaction_description_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_TRANSACTION_DESC",
+			          "ConceptualProperty": "TRANSACTION_DESCRIPTION_ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction description id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TRANSACTION_DESCRIPTION_ID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "description": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "description id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "transaction description identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "transaction description identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "transaction description identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "description identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "description identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "description identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "transaction description credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "appearance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "descriptor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "dim_transaction_desc.transaction_description": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DIM_TRANSACTION_DESC",
+			          "ConceptualProperty": "TRANSACTION_DESCRIPTION"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction description": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TRANSACTION_DESCRIPTION": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "description": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "transaction appearance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "transaction descriptor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "transaction explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "transaction specification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "appearance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "descriptor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "specification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "transaction account": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "transaction overview": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.as_at_ind": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "AsAtInd"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "as at ind": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AsAtInd": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.created_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "CREATED_DATE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CREATED_DATE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "created moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "created period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.created_date.variation.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "CREATED_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.created_date.variation.date_hierarchy.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "CREATED_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "created yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "created moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "created period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.created_date.variation.date_hierarchy.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "CREATED_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.846
+			          }
+			        },
+			        {
+			          "created qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "created moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "created period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.created_date.variation.date_hierarchy.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "CREATED_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "created mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "created moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "created period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.created_date.variation.date_hierarchy.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "CREATED_DATE",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "created moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "created period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.created_date_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "ConceptualProperty": "CREATED_DATE_KEY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created date key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CREATED_DATE_KEY": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "created moment key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "created period key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "created date solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "created date explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "created date basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "created date recipe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "created date interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "created date resolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash.matched_datetime.variation.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "MATCHED_DATETIME",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matched datetime date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "MATCHED_DATETIME",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matched datetime year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "matched datetime yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "MATCHED_DATETIME",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matched datetime quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "matched datetime qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.846
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "MATCHED_DATETIME",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matched datetime month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "matched datetime mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FACT_UNALLOCATED_CASH",
+			          "VariationSource": "MATCHED_DATETIME",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matched datetime day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    }
+			  },
+			  "Relationships": {
+			    "fact_unallocated_cash_matched_datetime_variation_date_hierarchy_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.month": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matched_datetime_date_hierarchies_have_matched_datetime_months"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_matched_datetime_variation_date_hierarchy_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.quarter": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matched_datetime_date_hierarchies_have_matched_datetime_quarters"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_matched_datetime_variation_date_hierarchy_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.year": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matched_datetime_date_hierarchies_have_matched_datetime_years"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_matched_datetime_has_variation_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.matched_datetime": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.matched_datetime"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matched_datetimes_have_matched_datetime_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_created_date_variation_date_hierarchy_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy.day": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "created_date_hierarchies_have_created_days"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_created_date_variation_date_hierarchy_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy.month": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "created_date_hierarchies_have_created_months"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_created_date_variation_date_hierarchy_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy.quarter": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "created_date_hierarchies_have_created_quarters"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_created_date_variation_date_hierarchy_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy.year": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "created_date_hierarchies_have_created_years"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_created_date_has_variation_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.created_date": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.created_date"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date.variation.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "created_dates_have_created_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_transaction_date_variation_date_hierarchy_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy.day": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transaction_date_hierarchies_have_transaction_days"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_transaction_date_variation_date_hierarchy_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy.month": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transaction_date_hierarchies_have_transaction_months"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_transaction_date_variation_date_hierarchy_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy.quarter": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transaction_date_hierarchies_have_transaction_quarters"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_transaction_date_variation_date_hierarchy_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy.year": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transaction_date_hierarchies_have_transaction_years"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_transaction_date_has_variation_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.transaction_date": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date"
+			          }
+			        },
+			        "fact_unallocated_cash.transaction_date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.transaction_date"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.transaction_date.variation.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transaction_dates_have_transaction_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "dim_date_date_variation_date_hierarchy_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date.variation.date_hierarchy.day": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date.variation.date_hierarchy.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_days"
+			        }
+			      ]
+			    },
+			    "dim_date_date_variation_date_hierarchy_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date.variation.date_hierarchy.month": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date.variation.date_hierarchy.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_months"
+			        }
+			      ]
+			    },
+			    "dim_date_date_variation_date_hierarchy_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date.variation.date_hierarchy.quarter": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date.variation.date_hierarchy.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_quarters"
+			        }
+			      ]
+			    },
+			    "dim_date_date_variation_date_hierarchy_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date.variation.date_hierarchy.year": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date.variation.date_hierarchy.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_years"
+			        }
+			      ]
+			    },
+			    "dim_date_date_has_variation_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date": {
+			          "Target": {
+			            "Entity": "dim_date.date"
+			          }
+			        },
+			        "dim_date.date.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date.variation.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date.variation.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_dim_transaction_desc": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "dim_transaction_desc": {
+			          "Target": {
+			            "Entity": "dim_transaction_desc"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "dim_transaction_desc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_dim_transaction_descs"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_transaction_desc"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_transaction_descs_have_fact_unallocated_cash"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fact_unallocated_cash"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_dim_currency": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "dim_currency": {
+			          "Target": {
+			            "Entity": "dim_currency"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "dim_currency"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_dim_currencies"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_currency"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_currencies_have_fact_unallocated_cash"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_matched_datetime": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.matched_datetime"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_matched_datetimes"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_created_date_key": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date_key": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_created_date_keys"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_created_date": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.created_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_created_dates"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_as_at_ind": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.as_at_ind": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.as_at_ind"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.as_at_ind"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_as_at_ind"
+			        }
+			      ]
+			    },
+			    "dim_transaction_desc_has_transaction_description": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_TRANSACTION_DESC"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_transaction_desc": {
+			          "Target": {
+			            "Entity": "dim_transaction_desc"
+			          }
+			        },
+			        "dim_transaction_desc.transaction_description": {
+			          "Target": {
+			            "Entity": "dim_transaction_desc.transaction_description"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_transaction_desc"
+			            },
+			            "Object": {
+			              "Role": "dim_transaction_desc.transaction_description"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_transaction_descs_have_transaction_descriptions"
+			        }
+			      ]
+			    },
+			    "dim_transaction_desc_has_transaction_description_id": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_TRANSACTION_DESC"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_transaction_desc": {
+			          "Target": {
+			            "Entity": "dim_transaction_desc"
+			          }
+			        },
+			        "dim_transaction_desc.transaction_description_id": {
+			          "Target": {
+			            "Entity": "dim_transaction_desc.transaction_description_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_transaction_desc"
+			            },
+			            "Object": {
+			              "Role": "dim_transaction_desc.transaction_description_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_transaction_descs_have_transaction_description_ids"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_allocated": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.allocated": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.allocated"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.allocated"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_allocated"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Adjectives": [
+			              {
+			                "allocated": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "fact_unallocated_cash.allocated"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "allocated_indicates_how_allocated_fact_unallocated_cash_are"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_balance": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.balance": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.balance"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.balance"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_balances"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_has_transaction_date": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.transaction_date": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.transaction_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.transaction_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_unallocated_cash_have_transaction_dates"
+			        }
+			      ]
+			    },
+			    "dim_date_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.quarter": {
+			          "Target": {
+			            "Entity": "dim_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_quarters"
+			        }
+			      ]
+			    },
+			    "dim_date_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.day": {
+			          "Target": {
+			            "Entity": "dim_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_days"
+			        }
+			      ]
+			    },
+			    "dim_date_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.month": {
+			          "Target": {
+			            "Entity": "dim_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_months"
+			        }
+			      ]
+			    },
+			    "dim_date_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.year": {
+			          "Target": {
+			            "Entity": "dim_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_years"
+			        }
+			      ]
+			    },
+			    "dim_date_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.date": {
+			          "Target": {
+			            "Entity": "dim_date.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_dates"
+			        }
+			      ]
+			    },
+			    "dim_date_has_date_key": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.date_key": {
+			          "Target": {
+			            "Entity": "dim_date.date_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_date_keys"
+			        }
+			      ]
+			    },
+			    "dim_currency_has_currency_id": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_CURRENCY"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_currency": {
+			          "Target": {
+			            "Entity": "dim_currency"
+			          }
+			        },
+			        "dim_currency.currency_id": {
+			          "Target": {
+			            "Entity": "dim_currency.currency_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_currency"
+			            },
+			            "Object": {
+			              "Role": "dim_currency.currency_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_currencies_have_currency_ids"
+			        }
+			      ]
+			    },
+			    "dim_currency_has_currency": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_CURRENCY"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_currency": {
+			          "Target": {
+			            "Entity": "dim_currency"
+			          }
+			        },
+			        "dim_currency.currency": {
+			          "Target": {
+			            "Entity": "dim_currency.currency"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_currency"
+			            },
+			            "Object": {
+			              "Role": "dim_currency.currency"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_currencies_have_currencies"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_is_matched_on_matched_datetime": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "fact_unallocated_cash.matched_datetime"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "match": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "fact_unallocated_cash"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "fact_unallocated_cash_are_matched_on_matched_datetimes"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_is_created_on_created_date": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash"
+			          }
+			        },
+			        "fact_unallocated_cash.created_date": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.created_date"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "fact_unallocated_cash.created_date"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "create": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "fact_unallocated_cash"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "fact_unallocated_cash_are_created_on_created_dates"
+			        }
+			      ]
+			    },
+			    "fact_unallocated_cash_matched_datetime_variation_date_hierarchy_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_UNALLOCATED_CASH"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			          }
+			        },
+			        "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.day": {
+			          "Target": {
+			            "Entity": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_unallocated_cash.matched_datetime.variation.date_hierarchy.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "matched_datetime_date_hierarchies_have_matched_datetime_days"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+
